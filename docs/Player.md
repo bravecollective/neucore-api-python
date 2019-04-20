@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **status** | **str** | Player account status. | [optional] 
 **roles** | [**list[Role]**](Role.md) | Roles for authorization. | [optional] 
 **characters** | [**list[Character]**](Character.md) |  | [optional] 
-**applications** | [**list[Group]**](Group.md) | Group applications. | [optional] 
 **groups** | [**list[Group]**](Group.md) | Group membership. | [optional] 
 **manager_groups** | [**list[Group]**](Group.md) | Manager of groups. | [optional] 
 **manager_apps** | [**list[App]**](App.md) | Manager of apps. | [optional] 
