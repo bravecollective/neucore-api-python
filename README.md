@@ -92,6 +92,7 @@ Class | Method | HTTP request | Description
 *ApplicationApi* | [**main_v1**](docs/ApplicationApi.md#main_v1) | **GET** /app/v1/main/{cid} | Returns the main character of the player account to which the character ID belongs.
 *ApplicationApi* | [**main_v2**](docs/ApplicationApi.md#main_v2) | **GET** /app/v2/main/{cid} | Return the main character of the player account to which the character ID belongs.
 *ApplicationApi* | [**member_tracking_v1**](docs/ApplicationApi.md#member_tracking_v1) | **GET** /app/v1/corporation/{id}/member-tracking | Return corporation member tracking data.
+*ApplicationApi* | [**player_v1**](docs/ApplicationApi.md#player_v1) | **GET** /app/v1/player/{characterId} | Return the player account to which the character ID belongs.
 *ApplicationApi* | [**removed_characters_v1**](docs/ApplicationApi.md#removed_characters_v1) | **GET** /app/v1/removed-characters/{characterId} | Return all characters that were removed from the player account to which the character ID belongs.
 *ApplicationApi* | [**show_v1**](docs/ApplicationApi.md#show_v1) | **GET** /app/v1/show | Show app information.
 

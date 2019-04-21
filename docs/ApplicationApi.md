@@ -20,6 +20,7 @@ Method | HTTP request | Description
 [**main_v1**](ApplicationApi.md#main_v1) | **GET** /app/v1/main/{cid} | Returns the main character of the player account to which the character ID belongs.
 [**main_v2**](ApplicationApi.md#main_v2) | **GET** /app/v2/main/{cid} | Return the main character of the player account to which the character ID belongs.
 [**member_tracking_v1**](ApplicationApi.md#member_tracking_v1) | **GET** /app/v1/corporation/{id}/member-tracking | Return corporation member tracking data.
+[**player_v1**](ApplicationApi.md#player_v1) | **GET** /app/v1/player/{characterId} | Return the player account to which the character ID belongs.
 [**removed_characters_v1**](ApplicationApi.md#removed_characters_v1) | **GET** /app/v1/removed-characters/{characterId} | Return all characters that were removed from the player account to which the character ID belongs.
 [**show_v1**](ApplicationApi.md#show_v1) | **GET** /app/v1/show | Show app information.
 
@@ -922,6 +923,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[CorporationMember]**](CorporationMember.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **player_v1**
+> Player player_v1(character_id)
+
+Return the player account to which the character ID belongs.
+
+Needs role: app-chars.
+
+### Example
+
+* Api Key Authentication (Bearer): 
+```python
+from __future__ import print_function
+import time
+import neucore_api
+from neucore_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Bearer
+configuration = neucore_api.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
+character_id = 56 # int | EVE character ID.
+
+try:
+    # Return the player account to which the character ID belongs.
+    api_response = api_instance.player_v1(character_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApplicationApi->player_v1: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **character_id** | **int**| EVE character ID. | 
+
+### Return type
+
+[**Player**](Player.md)
 
 ### Authorization
 

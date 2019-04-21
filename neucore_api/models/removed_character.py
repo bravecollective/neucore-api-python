@@ -207,6 +207,12 @@ class RemovedCharacter(object):
         """
         if reason is None:
             raise ValueError("Invalid value for `reason`, must not be `None`")  # noqa: E501
+        allowed_values = ["moved", "deleted-manually", "deleted-biomassed", "deleted-owner-changed"]  # noqa: E501
+        if reason not in allowed_values:
+            raise ValueError(
+                "Invalid value for `reason` ({0}), must be one of {1}"  # noqa: E501
+                .format(reason, allowed_values)
+            )
 
         self._reason = reason
 
