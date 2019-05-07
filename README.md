@@ -1,3 +1,5 @@
+[Changelog](CHANGELOG.md)
+
 # neucore-api
 Client library of Neucore API
 
