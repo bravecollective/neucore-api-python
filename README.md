@@ -1,4 +1,7 @@
-[Changelog](CHANGELOG.md)
+The version numbers correspond to the Neucore version numbers.
+
+When updating, check the generator version in .openapi-generator/VERSION, 
+a new version may break backwards compatibility.
 
 # neucore-api
 Client library of Neucore API
@@ -53,19 +56,19 @@ import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: Bearer
 configuration = neucore_api.Configuration()
+# Configure API key authorization: Bearer
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
-request_body = NULL # list[int] | EVE alliance IDs array.
+ids = [56] # list[int] | EVE alliance IDs array.
 
 try:
     # Return groups of multiple alliances.
-    api_response = api_instance.alliance_groups_bulk_v1(request_body)
+    api_response = api_instance.alliance_groups_bulk_v1(ids)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApplicationApi->alliance_groups_bulk_v1: %s\n" % e)

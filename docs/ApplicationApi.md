@@ -26,7 +26,7 @@ Method | HTTP request | Description
 
 
 # **alliance_groups_bulk_v1**
-> list[Alliance] alliance_groups_bulk_v1(request_body)
+> list[Alliance] alliance_groups_bulk_v1(ids)
 
 Return groups of multiple alliances.
 
@@ -34,27 +34,26 @@ Needs role: app-groups.<br>      *                  Returns only groups that hav
 
 ### Example
 
-* Api Key Authentication (Bearer): 
+* Api Key Authentication (Bearer):
 ```python
 from __future__ import print_function
 import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: Bearer
 configuration = neucore_api.Configuration()
+# Configure API key authorization: Bearer
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
-request_body = NULL # list[int] | EVE alliance IDs array.
+ids = [56] # list[int] | EVE alliance IDs array.
 
 try:
     # Return groups of multiple alliances.
-    api_response = api_instance.alliance_groups_bulk_v1(request_body)
+    api_response = api_instance.alliance_groups_bulk_v1(ids)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApplicationApi->alliance_groups_bulk_v1: %s\n" % e)
@@ -64,7 +63,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request_body** | [**list[int]**](list.md)| EVE alliance IDs array. | 
+ **ids** | [**list[int]**](int.md)| EVE alliance IDs array. | 
 
 ### Return type
 
@@ -79,6 +78,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of alliances with groups. |  -  |
+**400** | Invalid body. |  -  |
+**403** | Not authorized. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **alliance_groups_v1**
@@ -90,16 +96,15 @@ Needs role: app-groups.<br>Returns only groups that have been added to the app a
 
 ### Example
 
-* Api Key Authentication (Bearer): 
+* Api Key Authentication (Bearer):
 ```python
 from __future__ import print_function
 import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: Bearer
 configuration = neucore_api.Configuration()
+# Configure API key authorization: Bearer
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
@@ -135,6 +140,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of groups. |  -  |
+**403** | Not authorized. |  -  |
+**404** | Alliance not found. (default reason phrase) |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **alliance_groups_v2**
@@ -146,16 +158,15 @@ Needs role: app-groups.<br>Returns only groups that have been added to the app a
 
 ### Example
 
-* Api Key Authentication (Bearer): 
+* Api Key Authentication (Bearer):
 ```python
 from __future__ import print_function
 import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: Bearer
 configuration = neucore_api.Configuration()
+# Configure API key authorization: Bearer
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
@@ -191,6 +202,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of groups. |  -  |
+**403** | Not authorized. |  -  |
+**404** | Reason phrase: Alliance not found. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **characters_v1**
@@ -202,16 +220,15 @@ Needs role: app-chars.
 
 ### Example
 
-* Api Key Authentication (Bearer): 
+* Api Key Authentication (Bearer):
 ```python
 from __future__ import print_function
 import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: Bearer
 configuration = neucore_api.Configuration()
+# Configure API key authorization: Bearer
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
@@ -247,10 +264,17 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | All characters from the player account. |  -  |
+**403** | Not authorized. |  -  |
+**404** | Character (or player) not found. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **corp_groups_bulk_v1**
-> list[Corporation] corp_groups_bulk_v1(request_body)
+> list[Corporation] corp_groups_bulk_v1(ids)
 
 Return groups of multiple corporations.
 
@@ -258,27 +282,26 @@ Needs role: app-groups.<br>      *                  Returns only groups that hav
 
 ### Example
 
-* Api Key Authentication (Bearer): 
+* Api Key Authentication (Bearer):
 ```python
 from __future__ import print_function
 import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: Bearer
 configuration = neucore_api.Configuration()
+# Configure API key authorization: Bearer
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
-request_body = NULL # list[int] | EVE corporation IDs array.
+ids = [56] # list[int] | EVE corporation IDs array.
 
 try:
     # Return groups of multiple corporations.
-    api_response = api_instance.corp_groups_bulk_v1(request_body)
+    api_response = api_instance.corp_groups_bulk_v1(ids)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApplicationApi->corp_groups_bulk_v1: %s\n" % e)
@@ -288,7 +311,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request_body** | [**list[int]**](list.md)| EVE corporation IDs array. | 
+ **ids** | [**list[int]**](int.md)| EVE corporation IDs array. | 
 
 ### Return type
 
@@ -303,6 +326,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of corporations with groups but without alliance. |  -  |
+**400** | Invalid body. |  -  |
+**403** | Not authorized. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **corp_groups_v1**
@@ -314,16 +344,15 @@ Needs role: app-groups.<br>Returns only groups that have been added to the app a
 
 ### Example
 
-* Api Key Authentication (Bearer): 
+* Api Key Authentication (Bearer):
 ```python
 from __future__ import print_function
 import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: Bearer
 configuration = neucore_api.Configuration()
+# Configure API key authorization: Bearer
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
@@ -359,6 +388,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of groups. |  -  |
+**403** | Not authorized. |  -  |
+**404** | Corporation not found. (default reason phrase) |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **corp_groups_v2**
@@ -370,16 +406,15 @@ Needs role: app-groups.<br>Returns only groups that have been added to the app a
 
 ### Example
 
-* Api Key Authentication (Bearer): 
+* Api Key Authentication (Bearer):
 ```python
 from __future__ import print_function
 import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: Bearer
 configuration = neucore_api.Configuration()
+# Configure API key authorization: Bearer
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
@@ -415,10 +450,17 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of groups. |  -  |
+**403** | Not authorized. |  -  |
+**404** | Reason phrase: Corporation not found. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **esi_post_v1**
-> str esi_post_v1(esi_path_query, datasource, body)
+> str esi_post_v1(esi_path_query, datasource, data)
 
 Makes an ESI POST request on behalf on an EVE character and returns the result.
 
@@ -426,16 +468,15 @@ Needs role: app-esi<br>      *         Public ESI routes are not allowed.<br>   
 
 ### Example
 
-* Api Key Authentication (Bearer): 
+* Api Key Authentication (Bearer):
 ```python
 from __future__ import print_function
 import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: Bearer
 configuration = neucore_api.Configuration()
+# Configure API key authorization: Bearer
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
@@ -444,11 +485,11 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
 esi_path_query = 'esi_path_query_example' # str | The ESI path and query string (without the datasource parameter).
 datasource = 'datasource_example' # str | The EVE character ID those token should be used to make the ESI request
-body = 'body_example' # str | JSON encoded data.
+data = 'data_example' # str | JSON encoded data.
 
 try:
     # Makes an ESI POST request on behalf on an EVE character and returns the result.
-    api_response = api_instance.esi_post_v1(esi_path_query, datasource, body)
+    api_response = api_instance.esi_post_v1(esi_path_query, datasource, data)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApplicationApi->esi_post_v1: %s\n" % e)
@@ -460,7 +501,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **esi_path_query** | **str**| The ESI path and query string (without the datasource parameter). | 
  **datasource** | **str**| The EVE character ID those token should be used to make the ESI request | 
- **body** | **str**| JSON encoded data. | 
+ **data** | **str**| JSON encoded data. | 
 
 ### Return type
 
@@ -475,6 +516,20 @@ Name | Type | Description  | Notes
  - **Content-Type**: text/plain
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The data from ESI. |  * Expires - RFC7231 formatted datetime string <br>  |
+**304** | Not modified |  * Expires - RFC7231 formatted datetime string <br>  |
+**400** | Bad request, see reason phrase and/or body for more. |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**420** | Error limited |  -  |
+**429** | Maximum permissible ESI error limit reached (this is lower than X-Esi-Error-Limit-Remain). |  -  |
+**500** | Internal server error |  -  |
+**503** | Service unavailable |  -  |
+**504** | Gateway timeout |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **esi_v1**
@@ -486,16 +541,15 @@ Needs role: app-esi<br>      *         Public ESI routes are not allowed.<br>   
 
 ### Example
 
-* Api Key Authentication (Bearer): 
+* Api Key Authentication (Bearer):
 ```python
 from __future__ import print_function
 import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: Bearer
 configuration = neucore_api.Configuration()
+# Configure API key authorization: Bearer
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
@@ -533,10 +587,24 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The data from ESI. |  * Expires - RFC7231 formatted datetime string <br>  |
+**304** | Not modified |  * Expires - RFC7231 formatted datetime string <br>  |
+**400** | Bad request, see reason phrase and/or body for more. |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**420** | Error limited |  -  |
+**429** | Maximum permissible ESI error limit reached (this is lower than X-Esi-Error-Limit-Remain). |  -  |
+**500** | Internal server error |  -  |
+**503** | Service unavailable |  -  |
+**504** | Gateway timeout |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **groups_bulk_v1**
-> list[CharacterGroups] groups_bulk_v1(request_body)
+> list[CharacterGroups] groups_bulk_v1(ids)
 
 Return groups of multiple players, identified by one of their character IDs.
 
@@ -544,27 +612,26 @@ Needs role: app-groups.<br>      *                  Returns only groups that hav
 
 ### Example
 
-* Api Key Authentication (Bearer): 
+* Api Key Authentication (Bearer):
 ```python
 from __future__ import print_function
 import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: Bearer
 configuration = neucore_api.Configuration()
+# Configure API key authorization: Bearer
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
-request_body = NULL # list[int] | EVE character IDs array.
+ids = [56] # list[int] | EVE character IDs array.
 
 try:
     # Return groups of multiple players, identified by one of their character IDs.
-    api_response = api_instance.groups_bulk_v1(request_body)
+    api_response = api_instance.groups_bulk_v1(ids)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApplicationApi->groups_bulk_v1: %s\n" % e)
@@ -574,7 +641,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request_body** | [**list[int]**](list.md)| EVE character IDs array. | 
+ **ids** | [**list[int]**](int.md)| EVE character IDs array. | 
 
 ### Return type
 
@@ -589,6 +656,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of characters (id, name and corporation properties only) with groups. |  -  |
+**400** | Invalid body. |  -  |
+**403** | Not authorized. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **groups_v1**
@@ -600,16 +674,15 @@ Needs role: app-groups.<br>Returns only groups that have been added to the app a
 
 ### Example
 
-* Api Key Authentication (Bearer): 
+* Api Key Authentication (Bearer):
 ```python
 from __future__ import print_function
 import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: Bearer
 configuration = neucore_api.Configuration()
+# Configure API key authorization: Bearer
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
@@ -645,6 +718,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of groups. |  -  |
+**403** | Not authorized. |  -  |
+**404** | Character not found. (default reason phrase) |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **groups_v2**
@@ -656,16 +736,15 @@ Needs role: app-groups.<br>Returns only groups that have been added to the app a
 
 ### Example
 
-* Api Key Authentication (Bearer): 
+* Api Key Authentication (Bearer):
 ```python
 from __future__ import print_function
 import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: Bearer
 configuration = neucore_api.Configuration()
+# Configure API key authorization: Bearer
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
@@ -701,6 +780,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of groups. |  -  |
+**403** | Not authorized. |  -  |
+**404** | Reason phrase: Character not found. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **groups_with_fallback_v1**
@@ -712,16 +798,15 @@ Needs role: app-groups.<br>      *                  Returns only groups that hav
 
 ### Example
 
-* Api Key Authentication (Bearer): 
+* Api Key Authentication (Bearer):
 ```python
 from __future__ import print_function
 import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: Bearer
 configuration = neucore_api.Configuration()
+# Configure API key authorization: Bearer
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
@@ -761,6 +846,12 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of groups. |  -  |
+**403** | Not authorized. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **main_v1**
@@ -772,16 +863,15 @@ Needs role: app-chars.<br>It is possible that an account has no main character.
 
 ### Example
 
-* Api Key Authentication (Bearer): 
+* Api Key Authentication (Bearer):
 ```python
 from __future__ import print_function
 import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: Bearer
 configuration = neucore_api.Configuration()
+# Configure API key authorization: Bearer
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
@@ -817,6 +907,14 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The main character |  -  |
+**204** | No main character found. |  -  |
+**403** | Not authorized. |  -  |
+**404** | Character (or player) not found. (default reason phrase) |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **main_v2**
@@ -828,16 +926,15 @@ Needs role: app-chars.<br>It is possible that an account has no main character.
 
 ### Example
 
-* Api Key Authentication (Bearer): 
+* Api Key Authentication (Bearer):
 ```python
 from __future__ import print_function
 import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: Bearer
 configuration = neucore_api.Configuration()
+# Configure API key authorization: Bearer
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
@@ -873,6 +970,14 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The main character |  -  |
+**204** | No main character found. |  -  |
+**403** | Not authorized. |  -  |
+**404** | Reason phrase: Character not found. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **member_tracking_v1**
@@ -884,16 +989,15 @@ Needs role: app-tracking
 
 ### Example
 
-* Api Key Authentication (Bearer): 
+* Api Key Authentication (Bearer):
 ```python
 from __future__ import print_function
 import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: Bearer
 configuration = neucore_api.Configuration()
+# Configure API key authorization: Bearer
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
@@ -933,6 +1037,12 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Members ordered by logonDate descending (character and player properties excluded). |  -  |
+**403** | Not authorized. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **player_v1**
@@ -944,16 +1054,15 @@ Needs role: app-chars.
 
 ### Example
 
-* Api Key Authentication (Bearer): 
+* Api Key Authentication (Bearer):
 ```python
 from __future__ import print_function
 import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: Bearer
 configuration = neucore_api.Configuration()
+# Configure API key authorization: Bearer
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
@@ -989,6 +1098,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The player, only id and name properties are returned. |  -  |
+**403** | Not authorized. |  -  |
+**404** | Character not found. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **removed_characters_v1**
@@ -1000,16 +1116,15 @@ Needs role: app-chars.
 
 ### Example
 
-* Api Key Authentication (Bearer): 
+* Api Key Authentication (Bearer):
 ```python
 from __future__ import print_function
 import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: Bearer
 configuration = neucore_api.Configuration()
+# Configure API key authorization: Bearer
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
@@ -1045,6 +1160,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | All removed characters from the player account. |  -  |
+**403** | Not authorized. |  -  |
+**404** | Character (or player) not found. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **show_v1**
@@ -1056,16 +1178,15 @@ Needs role: app
 
 ### Example
 
-* Api Key Authentication (Bearer): 
+* Api Key Authentication (Bearer):
 ```python
 from __future__ import print_function
 import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: Bearer
 configuration = neucore_api.Configuration()
+# Configure API key authorization: Bearer
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
@@ -1096,6 +1217,12 @@ This endpoint does not need any parameter.
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The app information |  -  |
+**403** | Not authorized. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
