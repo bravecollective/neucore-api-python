@@ -981,7 +981,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **member_tracking_v1**
-> list[CorporationMember] member_tracking_v1(id, inactive=inactive, active=active)
+> list[CorporationMember] member_tracking_v1(id, inactive=inactive, active=active, account=account)
 
 Return corporation member tracking data.
 
@@ -1007,10 +1007,11 @@ api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
 id = 56 # int | EVE corporation ID.
 inactive = 56 # int | Limit to members who have been inactive for x days or longer. (optional)
 active = 56 # int | Limit to members who were active in the last x days. (optional)
+account = 'account_example' # str | Limit to members with (true) or without (false) an account. (optional)
 
 try:
     # Return corporation member tracking data.
-    api_response = api_instance.member_tracking_v1(id, inactive=inactive, active=active)
+    api_response = api_instance.member_tracking_v1(id, inactive=inactive, active=active, account=account)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApplicationApi->member_tracking_v1: %s\n" % e)
@@ -1023,6 +1024,7 @@ Name | Type | Description  | Notes
  **id** | **int**| EVE corporation ID. | 
  **inactive** | **int**| Limit to members who have been inactive for x days or longer. | [optional] 
  **active** | **int**| Limit to members who were active in the last x days. | [optional] 
+ **account** | **str**| Limit to members with (true) or without (false) an account. | [optional] 
 
 ### Return type
 
