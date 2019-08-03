@@ -11,15 +11,17 @@ Method | HTTP request | Description
 [**corp_groups_bulk_v1**](ApplicationApi.md#corp_groups_bulk_v1) | **POST** /app/v1/corp-groups | Return groups of multiple corporations.
 [**corp_groups_v1**](ApplicationApi.md#corp_groups_v1) | **GET** /app/v1/corp-groups/{cid} | Return groups of the corporation.
 [**corp_groups_v2**](ApplicationApi.md#corp_groups_v2) | **GET** /app/v2/corp-groups/{cid} | Return groups of the corporation.
+[**corporation_players_v1**](ApplicationApi.md#corporation_players_v1) | **GET** /app/v1/corp-players/{corporationId} | Return a list of all player IDs that have a character in the corporation.
 [**esi_post_v1**](ApplicationApi.md#esi_post_v1) | **POST** /app/v1/esi | Makes an ESI POST request on behalf on an EVE character and returns the result.
 [**esi_v1**](ApplicationApi.md#esi_v1) | **GET** /app/v1/esi | Makes an ESI GET request on behalf on an EVE character and returns the result.
 [**groups_bulk_v1**](ApplicationApi.md#groups_bulk_v1) | **POST** /app/v1/groups | Return groups of multiple players, identified by one of their character IDs.
 [**groups_v1**](ApplicationApi.md#groups_v1) | **GET** /app/v1/groups/{cid} | Return groups of the character&#39;s player account.
 [**groups_v2**](ApplicationApi.md#groups_v2) | **GET** /app/v2/groups/{cid} | Return groups of the character&#39;s player account.
 [**groups_with_fallback_v1**](ApplicationApi.md#groups_with_fallback_v1) | **GET** /app/v1/groups-with-fallback | Returns groups from the character&#39;s account, if available, or the corporation and alliance.
-[**main_v1**](ApplicationApi.md#main_v1) | **GET** /app/v1/main/{cid} | Returns the main character of the player account to which the character ID belongs.
+[**main_v1**](ApplicationApi.md#main_v1) | **GET** /app/v1/main/{cid} | Return the main character of the player account to which the character ID belongs.
 [**main_v2**](ApplicationApi.md#main_v2) | **GET** /app/v2/main/{cid} | Return the main character of the player account to which the character ID belongs.
 [**member_tracking_v1**](ApplicationApi.md#member_tracking_v1) | **GET** /app/v1/corporation/{id}/member-tracking | Return corporation member tracking data.
+[**player_characters_v1**](ApplicationApi.md#player_characters_v1) | **GET** /app/v1/player-chars/{playerId} | Return all characters from the player account.
 [**player_v1**](ApplicationApi.md#player_v1) | **GET** /app/v1/player/{characterId} | Return the player account to which the character ID belongs.
 [**removed_characters_v1**](ApplicationApi.md#removed_characters_v1) | **GET** /app/v1/removed-characters/{characterId} | Return all characters that were removed from the player account to which the character ID belongs.
 [**show_v1**](ApplicationApi.md#show_v1) | **GET** /app/v1/show | Show app information.
@@ -47,7 +49,9 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
+# Defining host is optional and default to https://localhost/api
+configuration.host = "https://localhost/api"
+# Create an instance of the API class
 api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
 ids = [56] # list[int] | EVE alliance IDs array.
 
@@ -109,7 +113,9 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
+# Defining host is optional and default to https://localhost/api
+configuration.host = "https://localhost/api"
+# Create an instance of the API class
 api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
 aid = 56 # int | EVE alliance ID.
 
@@ -171,7 +177,9 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
+# Defining host is optional and default to https://localhost/api
+configuration.host = "https://localhost/api"
+# Create an instance of the API class
 api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
 aid = 56 # int | EVE alliance ID.
 
@@ -233,7 +241,9 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
+# Defining host is optional and default to https://localhost/api
+configuration.host = "https://localhost/api"
+# Create an instance of the API class
 api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
 character_id = 56 # int | EVE character ID.
 
@@ -295,7 +305,9 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
+# Defining host is optional and default to https://localhost/api
+configuration.host = "https://localhost/api"
+# Create an instance of the API class
 api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
 ids = [56] # list[int] | EVE corporation IDs array.
 
@@ -357,7 +369,9 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
+# Defining host is optional and default to https://localhost/api
+configuration.host = "https://localhost/api"
+# Create an instance of the API class
 api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
 cid = 56 # int | EVE corporation ID.
 
@@ -419,7 +433,9 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
+# Defining host is optional and default to https://localhost/api
+configuration.host = "https://localhost/api"
+# Create an instance of the API class
 api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
 cid = 56 # int | EVE corporation ID.
 
@@ -459,6 +475,69 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **corporation_players_v1**
+> list[Player] corporation_players_v1(corporation_id)
+
+Return a list of all player IDs that have a character in the corporation.
+
+Needs role: app-chars.
+
+### Example
+
+* Api Key Authentication (Bearer):
+```python
+from __future__ import print_function
+import time
+import neucore_api
+from neucore_api.rest import ApiException
+from pprint import pprint
+configuration = neucore_api.Configuration()
+# Configure API key authorization: Bearer
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to https://localhost/api
+configuration.host = "https://localhost/api"
+# Create an instance of the API class
+api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
+corporation_id = 56 # int | EVE corporation ID.
+
+try:
+    # Return a list of all player IDs that have a character in the corporation.
+    api_response = api_instance.corporation_players_v1(corporation_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApplicationApi->corporation_players_v1: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **corporation_id** | **int**| EVE corporation ID. | 
+
+### Return type
+
+[**list[Player]**](Player.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of players, only id and name properties are returned. |  -  |
+**403** | Not authorized. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **esi_post_v1**
 > str esi_post_v1(esi_path_query, datasource, data)
 
@@ -481,7 +560,9 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
+# Defining host is optional and default to https://localhost/api
+configuration.host = "https://localhost/api"
+# Create an instance of the API class
 api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
 esi_path_query = 'esi_path_query_example' # str | The ESI path and query string (without the datasource parameter).
 datasource = 'datasource_example' # str | The EVE character ID those token should be used to make the ESI request
@@ -554,7 +635,9 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
+# Defining host is optional and default to https://localhost/api
+configuration.host = "https://localhost/api"
+# Create an instance of the API class
 api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
 esi_path_query = 'esi_path_query_example' # str | The ESI path and query string (without the datasource parameter).
 datasource = 'datasource_example' # str | The EVE character ID those token should be used to make the ESI request
@@ -625,7 +708,9 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
+# Defining host is optional and default to https://localhost/api
+configuration.host = "https://localhost/api"
+# Create an instance of the API class
 api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
 ids = [56] # list[int] | EVE character IDs array.
 
@@ -687,7 +772,9 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
+# Defining host is optional and default to https://localhost/api
+configuration.host = "https://localhost/api"
+# Create an instance of the API class
 api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
 cid = 56 # int | EVE character ID.
 
@@ -749,7 +836,9 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
+# Defining host is optional and default to https://localhost/api
+configuration.host = "https://localhost/api"
+# Create an instance of the API class
 api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
 cid = 56 # int | EVE character ID.
 
@@ -811,7 +900,9 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
+# Defining host is optional and default to https://localhost/api
+configuration.host = "https://localhost/api"
+# Create an instance of the API class
 api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
 character = 56 # int | EVE character ID.
 corporation = 56 # int | EVE corporation ID.
@@ -857,7 +948,7 @@ Name | Type | Description  | Notes
 # **main_v1**
 > Character main_v1(cid)
 
-Returns the main character of the player account to which the character ID belongs.
+Return the main character of the player account to which the character ID belongs.
 
 Needs role: app-chars.<br>It is possible that an account has no main character.
 
@@ -876,12 +967,14 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
+# Defining host is optional and default to https://localhost/api
+configuration.host = "https://localhost/api"
+# Create an instance of the API class
 api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
 cid = 56 # int | EVE character ID.
 
 try:
-    # Returns the main character of the player account to which the character ID belongs.
+    # Return the main character of the player account to which the character ID belongs.
     api_response = api_instance.main_v1(cid)
     pprint(api_response)
 except ApiException as e:
@@ -939,7 +1032,9 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
+# Defining host is optional and default to https://localhost/api
+configuration.host = "https://localhost/api"
+# Create an instance of the API class
 api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
 cid = 56 # int | EVE character ID.
 
@@ -1002,7 +1097,9 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
+# Defining host is optional and default to https://localhost/api
+configuration.host = "https://localhost/api"
+# Create an instance of the API class
 api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
 id = 56 # int | EVE corporation ID.
 inactive = 56 # int | Limit to members who have been inactive for x days or longer. (optional)
@@ -1047,6 +1144,70 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **player_characters_v1**
+> list[Character] player_characters_v1(player_id)
+
+Return all characters from the player account.
+
+Needs role: app-chars.
+
+### Example
+
+* Api Key Authentication (Bearer):
+```python
+from __future__ import print_function
+import time
+import neucore_api
+from neucore_api.rest import ApiException
+from pprint import pprint
+configuration = neucore_api.Configuration()
+# Configure API key authorization: Bearer
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to https://localhost/api
+configuration.host = "https://localhost/api"
+# Create an instance of the API class
+api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
+player_id = 56 # int | Player ID.
+
+try:
+    # Return all characters from the player account.
+    api_response = api_instance.player_characters_v1(player_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApplicationApi->player_characters_v1: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **player_id** | **int**| Player ID. | 
+
+### Return type
+
+[**list[Character]**](Character.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | All characters from the player account. |  -  |
+**403** | Not authorized. |  -  |
+**404** | Player not found. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **player_v1**
 > Player player_v1(character_id)
 
@@ -1069,7 +1230,9 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
+# Defining host is optional and default to https://localhost/api
+configuration.host = "https://localhost/api"
+# Create an instance of the API class
 api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
 character_id = 56 # int | EVE character ID.
 
@@ -1131,7 +1294,9 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
+# Defining host is optional and default to https://localhost/api
+configuration.host = "https://localhost/api"
+# Create an instance of the API class
 api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
 character_id = 56 # int | EVE character ID.
 
@@ -1193,7 +1358,9 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
+# Defining host is optional and default to https://localhost/api
+configuration.host = "https://localhost/api"
+# Create an instance of the API class
 api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
 
 try:

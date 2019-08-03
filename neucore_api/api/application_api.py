@@ -792,6 +792,114 @@ class ApplicationApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def corporation_players_v1(self, corporation_id, **kwargs):  # noqa: E501
+        """Return a list of all player IDs that have a character in the corporation.  # noqa: E501
+
+        Needs role: app-chars.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.corporation_players_v1(corporation_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param int corporation_id: EVE corporation ID. (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: list[Player]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.corporation_players_v1_with_http_info(corporation_id, **kwargs)  # noqa: E501
+
+    def corporation_players_v1_with_http_info(self, corporation_id, **kwargs):  # noqa: E501
+        """Return a list of all player IDs that have a character in the corporation.  # noqa: E501
+
+        Needs role: app-chars.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.corporation_players_v1_with_http_info(corporation_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param int corporation_id: EVE corporation ID. (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(list[Player], status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['corporation_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method corporation_players_v1" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'corporation_id' is set
+        if ('corporation_id' not in local_var_params or
+                local_var_params['corporation_id'] is None):
+            raise ApiValueError("Missing the required parameter `corporation_id` when calling `corporation_players_v1`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'corporation_id' in local_var_params:
+            path_params['corporationId'] = local_var_params['corporation_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Bearer']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/v1/corp-players/{corporationId}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[Player]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def esi_post_v1(self, esi_path_query, datasource, data, **kwargs):  # noqa: E501
         """Makes an ESI POST request on behalf on an EVE character and returns the result.  # noqa: E501
 
@@ -1481,7 +1589,7 @@ class ApplicationApi(object):
             collection_formats=collection_formats)
 
     def main_v1(self, cid, **kwargs):  # noqa: E501
-        """Returns the main character of the player account to which the character ID belongs.  # noqa: E501
+        """Return the main character of the player account to which the character ID belongs.  # noqa: E501
 
         Needs role: app-chars.<br>It is possible that an account has no main character.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1506,7 +1614,7 @@ class ApplicationApi(object):
         return self.main_v1_with_http_info(cid, **kwargs)  # noqa: E501
 
     def main_v1_with_http_info(self, cid, **kwargs):  # noqa: E501
-        """Returns the main character of the player account to which the character ID belongs.  # noqa: E501
+        """Return the main character of the player account to which the character ID belongs.  # noqa: E501
 
         Needs role: app-chars.<br>It is possible that an account has no main character.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1809,6 +1917,114 @@ class ApplicationApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='list[CorporationMember]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def player_characters_v1(self, player_id, **kwargs):  # noqa: E501
+        """Return all characters from the player account.  # noqa: E501
+
+        Needs role: app-chars.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.player_characters_v1(player_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param int player_id: Player ID. (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: list[Character]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.player_characters_v1_with_http_info(player_id, **kwargs)  # noqa: E501
+
+    def player_characters_v1_with_http_info(self, player_id, **kwargs):  # noqa: E501
+        """Return all characters from the player account.  # noqa: E501
+
+        Needs role: app-chars.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.player_characters_v1_with_http_info(player_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param int player_id: Player ID. (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(list[Character], status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['player_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method player_characters_v1" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'player_id' is set
+        if ('player_id' not in local_var_params or
+                local_var_params['player_id'] is None):
+            raise ApiValueError("Missing the required parameter `player_id` when calling `player_characters_v1`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'player_id' in local_var_params:
+            path_params['playerId'] = local_var_params['player_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Bearer']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/app/v1/player-chars/{playerId}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[Character]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501

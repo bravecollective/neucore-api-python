@@ -62,7 +62,9 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
+# Defining host is optional and default to https://localhost/api
+configuration.host = "https://localhost/api"
+# Create an instance of the API class
 api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
 ids = [56] # list[int] | EVE alliance IDs array.
 
@@ -88,15 +90,17 @@ Class | Method | HTTP request | Description
 *ApplicationApi* | [**corp_groups_bulk_v1**](docs/ApplicationApi.md#corp_groups_bulk_v1) | **POST** /app/v1/corp-groups | Return groups of multiple corporations.
 *ApplicationApi* | [**corp_groups_v1**](docs/ApplicationApi.md#corp_groups_v1) | **GET** /app/v1/corp-groups/{cid} | Return groups of the corporation.
 *ApplicationApi* | [**corp_groups_v2**](docs/ApplicationApi.md#corp_groups_v2) | **GET** /app/v2/corp-groups/{cid} | Return groups of the corporation.
+*ApplicationApi* | [**corporation_players_v1**](docs/ApplicationApi.md#corporation_players_v1) | **GET** /app/v1/corp-players/{corporationId} | Return a list of all player IDs that have a character in the corporation.
 *ApplicationApi* | [**esi_post_v1**](docs/ApplicationApi.md#esi_post_v1) | **POST** /app/v1/esi | Makes an ESI POST request on behalf on an EVE character and returns the result.
 *ApplicationApi* | [**esi_v1**](docs/ApplicationApi.md#esi_v1) | **GET** /app/v1/esi | Makes an ESI GET request on behalf on an EVE character and returns the result.
 *ApplicationApi* | [**groups_bulk_v1**](docs/ApplicationApi.md#groups_bulk_v1) | **POST** /app/v1/groups | Return groups of multiple players, identified by one of their character IDs.
 *ApplicationApi* | [**groups_v1**](docs/ApplicationApi.md#groups_v1) | **GET** /app/v1/groups/{cid} | Return groups of the character&#39;s player account.
 *ApplicationApi* | [**groups_v2**](docs/ApplicationApi.md#groups_v2) | **GET** /app/v2/groups/{cid} | Return groups of the character&#39;s player account.
 *ApplicationApi* | [**groups_with_fallback_v1**](docs/ApplicationApi.md#groups_with_fallback_v1) | **GET** /app/v1/groups-with-fallback | Returns groups from the character&#39;s account, if available, or the corporation and alliance.
-*ApplicationApi* | [**main_v1**](docs/ApplicationApi.md#main_v1) | **GET** /app/v1/main/{cid} | Returns the main character of the player account to which the character ID belongs.
+*ApplicationApi* | [**main_v1**](docs/ApplicationApi.md#main_v1) | **GET** /app/v1/main/{cid} | Return the main character of the player account to which the character ID belongs.
 *ApplicationApi* | [**main_v2**](docs/ApplicationApi.md#main_v2) | **GET** /app/v2/main/{cid} | Return the main character of the player account to which the character ID belongs.
 *ApplicationApi* | [**member_tracking_v1**](docs/ApplicationApi.md#member_tracking_v1) | **GET** /app/v1/corporation/{id}/member-tracking | Return corporation member tracking data.
+*ApplicationApi* | [**player_characters_v1**](docs/ApplicationApi.md#player_characters_v1) | **GET** /app/v1/player-chars/{playerId} | Return all characters from the player account.
 *ApplicationApi* | [**player_v1**](docs/ApplicationApi.md#player_v1) | **GET** /app/v1/player/{characterId} | Return the player account to which the character ID belongs.
 *ApplicationApi* | [**removed_characters_v1**](docs/ApplicationApi.md#removed_characters_v1) | **GET** /app/v1/removed-characters/{characterId} | Return all characters that were removed from the player account to which the character ID belongs.
 *ApplicationApi* | [**show_v1**](docs/ApplicationApi.md#show_v1) | **GET** /app/v1/show | Show app information.
