@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**corp_groups_bulk_v1**](ApplicationApi.md#corp_groups_bulk_v1) | **POST** /app/v1/corp-groups | Return groups of multiple corporations.
 [**corp_groups_v1**](ApplicationApi.md#corp_groups_v1) | **GET** /app/v1/corp-groups/{cid} | Return groups of the corporation.
 [**corp_groups_v2**](ApplicationApi.md#corp_groups_v2) | **GET** /app/v2/corp-groups/{cid} | Return groups of the corporation.
-[**corporation_players_v1**](ApplicationApi.md#corporation_players_v1) | **GET** /app/v1/corp-players/{corporationId} | Return a list of all player IDs that have a character in the corporation.
+[**corporation_players_v1**](ApplicationApi.md#corporation_players_v1) | **GET** /app/v1/corp-players/{corporationId} | Return a list of all players that have a character in the corporation.
 [**esi_post_v1**](ApplicationApi.md#esi_post_v1) | **POST** /app/v1/esi | Makes an ESI POST request on behalf on an EVE character and returns the result.
 [**esi_v1**](ApplicationApi.md#esi_v1) | **GET** /app/v1/esi | Makes an ESI GET request on behalf on an EVE character and returns the result.
 [**groups_bulk_v1**](ApplicationApi.md#groups_bulk_v1) | **POST** /app/v1/groups | Return groups of multiple players, identified by one of their character IDs.
@@ -478,7 +478,7 @@ Name | Type | Description  | Notes
 # **corporation_players_v1**
 > list[Player] corporation_players_v1(corporation_id)
 
-Return a list of all player IDs that have a character in the corporation.
+Return a list of all players that have a character in the corporation.
 
 Needs role: app-chars.
 
@@ -504,7 +504,7 @@ api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
 corporation_id = 56 # int | EVE corporation ID.
 
 try:
-    # Return a list of all player IDs that have a character in the corporation.
+    # Return a list of all players that have a character in the corporation.
     api_response = api_instance.corporation_players_v1(corporation_id)
     pprint(api_response)
 except ApiException as e:

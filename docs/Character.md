@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **name** | **str** | EVE character name. | 
 **main** | **bool** |  | [optional] 
 **valid_token** | **bool** | Shows if character&#39;s refresh token is valid or not.  If there is no refresh token this is null. | [optional] 
+**valid_token_time** | **datetime** | Date and time when that valid token property was last changed. | [optional] 
 **last_update** | **datetime** | Last ESI update. | [optional] 
 **corporation** | [**Corporation**](Corporation.md) |  | [optional] 
 
