@@ -73,6 +73,9 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         self.password = password
         """Password for HTTP basic authentication
         """
+        self.access_token = ""
+        """access token for OAuth/Bearer
+        """
         self.logger = {}
         """Logging Settings
         """
@@ -245,12 +248,12 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         :return: The Auth Settings information dict.
         """
         return {
-            'Bearer':
+            'BearerAuth':
                 {
-                    'type': 'api_key',
+                    'type': 'bearer',
                     'in': 'header',
                     'key': 'Authorization',
-                    'value': self.get_api_key_with_prefix('Authorization')
+                    'value': 'Bearer ' + self.access_token
                 },
         }
 
@@ -274,10 +277,6 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         return [
             {
                 'url': "https://localhost/api",
-                'description': "No description provided",
-            },
-            {
-                'url': "http://localhost/api",
                 'description': "No description provided",
             }
         ]

@@ -3,6 +3,12 @@ The version numbers correspond to the Neucore version numbers.
 When updating, check the generator version in .openapi-generator/VERSION, 
 a new version may break backwards compatibility.
 
+**Breaking changes**
+
+- 1.4.0:  
+  Generated from OpenAPI v3 definition file.  
+  The authorization configuration changed, use `access_token` instead of `api_key`, see below. 
+
 # neucore-api
 Client library of Neucore API
 
@@ -57,20 +63,18 @@ from neucore_api.rest import ApiException
 from pprint import pprint
 
 configuration = neucore_api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure Bearer authorization: BearerAuth
+configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://localhost/api
 configuration.host = "https://localhost/api"
 # Create an instance of the API class
 api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
-ids = [56] # list[int] | EVE alliance IDs array.
+request_body = [56] # list[int] | EVE alliance IDs array.
 
 try:
     # Return groups of multiple alliances.
-    api_response = api_instance.alliance_groups_bulk_v1(ids)
+    api_response = api_instance.alliance_groups_bulk_v1(request_body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApplicationApi->alliance_groups_bulk_v1: %s\n" % e)
@@ -125,11 +129,9 @@ Class | Method | HTTP request | Description
 ## Documentation For Authorization
 
 
-## Bearer
+## BearerAuth
 
-- **Type**: API key
-- **API key parameter name**: Authorization
-- **Location**: HTTP header
+- **Type**: Bearer authentication
 
 
 ## Author

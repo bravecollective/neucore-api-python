@@ -28,7 +28,7 @@ Method | HTTP request | Description
 
 
 # **alliance_groups_bulk_v1**
-> list[Alliance] alliance_groups_bulk_v1(ids)
+> list[Alliance] alliance_groups_bulk_v1(request_body)
 
 Return groups of multiple alliances.
 
@@ -36,7 +36,7 @@ Needs role: app-groups.<br>      *                  Returns only groups that hav
 
 ### Example
 
-* Api Key Authentication (Bearer):
+* Bearer Authentication (BearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -44,20 +44,18 @@ import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
 configuration = neucore_api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure Bearer authorization: BearerAuth
+configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://localhost/api
 configuration.host = "https://localhost/api"
 # Create an instance of the API class
 api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
-ids = [56] # list[int] | EVE alliance IDs array.
+request_body = [56] # list[int] | EVE alliance IDs array.
 
 try:
     # Return groups of multiple alliances.
-    api_response = api_instance.alliance_groups_bulk_v1(ids)
+    api_response = api_instance.alliance_groups_bulk_v1(request_body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApplicationApi->alliance_groups_bulk_v1: %s\n" % e)
@@ -67,7 +65,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ids** | [**list[int]**](int.md)| EVE alliance IDs array. | 
+ **request_body** | [**list[int]**](int.md)| EVE alliance IDs array. | 
 
 ### Return type
 
@@ -75,11 +73,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -100,7 +98,7 @@ Needs role: app-groups.<br>Returns only groups that have been added to the app a
 
 ### Example
 
-* Api Key Authentication (Bearer):
+* Bearer Authentication (BearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -108,10 +106,8 @@ import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
 configuration = neucore_api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure Bearer authorization: BearerAuth
+configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://localhost/api
 configuration.host = "https://localhost/api"
@@ -139,7 +135,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -164,7 +160,7 @@ Needs role: app-groups.<br>Returns only groups that have been added to the app a
 
 ### Example
 
-* Api Key Authentication (Bearer):
+* Bearer Authentication (BearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -172,10 +168,8 @@ import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
 configuration = neucore_api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure Bearer authorization: BearerAuth
+configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://localhost/api
 configuration.host = "https://localhost/api"
@@ -203,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -228,7 +222,7 @@ Needs role: app-chars.
 
 ### Example
 
-* Api Key Authentication (Bearer):
+* Bearer Authentication (BearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -236,10 +230,8 @@ import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
 configuration = neucore_api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure Bearer authorization: BearerAuth
+configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://localhost/api
 configuration.host = "https://localhost/api"
@@ -267,7 +259,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -284,7 +276,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **corp_groups_bulk_v1**
-> list[Corporation] corp_groups_bulk_v1(ids)
+> list[Corporation] corp_groups_bulk_v1(request_body)
 
 Return groups of multiple corporations.
 
@@ -292,7 +284,7 @@ Needs role: app-groups.<br>      *                  Returns only groups that hav
 
 ### Example
 
-* Api Key Authentication (Bearer):
+* Bearer Authentication (BearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -300,20 +292,18 @@ import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
 configuration = neucore_api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure Bearer authorization: BearerAuth
+configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://localhost/api
 configuration.host = "https://localhost/api"
 # Create an instance of the API class
 api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
-ids = [56] # list[int] | EVE corporation IDs array.
+request_body = [56] # list[int] | EVE corporation IDs array.
 
 try:
     # Return groups of multiple corporations.
-    api_response = api_instance.corp_groups_bulk_v1(ids)
+    api_response = api_instance.corp_groups_bulk_v1(request_body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApplicationApi->corp_groups_bulk_v1: %s\n" % e)
@@ -323,7 +313,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ids** | [**list[int]**](int.md)| EVE corporation IDs array. | 
+ **request_body** | [**list[int]**](int.md)| EVE corporation IDs array. | 
 
 ### Return type
 
@@ -331,11 +321,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -356,7 +346,7 @@ Needs role: app-groups.<br>Returns only groups that have been added to the app a
 
 ### Example
 
-* Api Key Authentication (Bearer):
+* Bearer Authentication (BearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -364,10 +354,8 @@ import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
 configuration = neucore_api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure Bearer authorization: BearerAuth
+configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://localhost/api
 configuration.host = "https://localhost/api"
@@ -395,7 +383,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -420,7 +408,7 @@ Needs role: app-groups.<br>Returns only groups that have been added to the app a
 
 ### Example
 
-* Api Key Authentication (Bearer):
+* Bearer Authentication (BearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -428,10 +416,8 @@ import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
 configuration = neucore_api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure Bearer authorization: BearerAuth
+configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://localhost/api
 configuration.host = "https://localhost/api"
@@ -459,7 +445,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -484,7 +470,7 @@ Needs role: app-chars.
 
 ### Example
 
-* Api Key Authentication (Bearer):
+* Bearer Authentication (BearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -492,10 +478,8 @@ import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
 configuration = neucore_api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure Bearer authorization: BearerAuth
+configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://localhost/api
 configuration.host = "https://localhost/api"
@@ -523,7 +507,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -539,7 +523,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **esi_post_v1**
-> str esi_post_v1(esi_path_query, datasource, data)
+> str esi_post_v1(esi_path_query, datasource, body)
 
 Makes an ESI POST request on behalf on an EVE character and returns the result.
 
@@ -547,7 +531,7 @@ Needs role: app-esi<br>      *         Public ESI routes are not allowed.<br>   
 
 ### Example
 
-* Api Key Authentication (Bearer):
+* Bearer Authentication (BearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -555,10 +539,8 @@ import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
 configuration = neucore_api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure Bearer authorization: BearerAuth
+configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://localhost/api
 configuration.host = "https://localhost/api"
@@ -566,11 +548,11 @@ configuration.host = "https://localhost/api"
 api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
 esi_path_query = 'esi_path_query_example' # str | The ESI path and query string (without the datasource parameter).
 datasource = 'datasource_example' # str | The EVE character ID those token should be used to make the ESI request
-data = 'data_example' # str | JSON encoded data.
+body = 'body_example' # str | JSON encoded data.
 
 try:
     # Makes an ESI POST request on behalf on an EVE character and returns the result.
-    api_response = api_instance.esi_post_v1(esi_path_query, datasource, data)
+    api_response = api_instance.esi_post_v1(esi_path_query, datasource, body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApplicationApi->esi_post_v1: %s\n" % e)
@@ -582,7 +564,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **esi_path_query** | **str**| The ESI path and query string (without the datasource parameter). | 
  **datasource** | **str**| The EVE character ID those token should be used to make the ESI request | 
- **data** | **str**| JSON encoded data. | 
+ **body** | **str**| JSON encoded data. | 
 
 ### Return type
 
@@ -590,7 +572,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -622,7 +604,7 @@ Needs role: app-esi<br>      *         Public ESI routes are not allowed.<br>   
 
 ### Example
 
-* Api Key Authentication (Bearer):
+* Bearer Authentication (BearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -630,10 +612,8 @@ import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
 configuration = neucore_api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure Bearer authorization: BearerAuth
+configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://localhost/api
 configuration.host = "https://localhost/api"
@@ -663,7 +643,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -687,7 +667,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **groups_bulk_v1**
-> list[CharacterGroups] groups_bulk_v1(ids)
+> list[CharacterGroups] groups_bulk_v1(request_body)
 
 Return groups of multiple players, identified by one of their character IDs.
 
@@ -695,7 +675,7 @@ Needs role: app-groups.<br>      *                  Returns only groups that hav
 
 ### Example
 
-* Api Key Authentication (Bearer):
+* Bearer Authentication (BearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -703,20 +683,18 @@ import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
 configuration = neucore_api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure Bearer authorization: BearerAuth
+configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://localhost/api
 configuration.host = "https://localhost/api"
 # Create an instance of the API class
 api_instance = neucore_api.ApplicationApi(neucore_api.ApiClient(configuration))
-ids = [56] # list[int] | EVE character IDs array.
+request_body = [56] # list[int] | EVE character IDs array.
 
 try:
     # Return groups of multiple players, identified by one of their character IDs.
-    api_response = api_instance.groups_bulk_v1(ids)
+    api_response = api_instance.groups_bulk_v1(request_body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApplicationApi->groups_bulk_v1: %s\n" % e)
@@ -726,7 +704,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ids** | [**list[int]**](int.md)| EVE character IDs array. | 
+ **request_body** | [**list[int]**](int.md)| EVE character IDs array. | 
 
 ### Return type
 
@@ -734,11 +712,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -759,7 +737,7 @@ Needs role: app-groups.<br>Returns only groups that have been added to the app a
 
 ### Example
 
-* Api Key Authentication (Bearer):
+* Bearer Authentication (BearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -767,10 +745,8 @@ import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
 configuration = neucore_api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure Bearer authorization: BearerAuth
+configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://localhost/api
 configuration.host = "https://localhost/api"
@@ -798,7 +774,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -823,7 +799,7 @@ Needs role: app-groups.<br>Returns only groups that have been added to the app a
 
 ### Example
 
-* Api Key Authentication (Bearer):
+* Bearer Authentication (BearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -831,10 +807,8 @@ import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
 configuration = neucore_api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure Bearer authorization: BearerAuth
+configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://localhost/api
 configuration.host = "https://localhost/api"
@@ -862,7 +836,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -887,7 +861,7 @@ Needs role: app-groups.<br>      *                  Returns only groups that hav
 
 ### Example
 
-* Api Key Authentication (Bearer):
+* Bearer Authentication (BearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -895,10 +869,8 @@ import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
 configuration = neucore_api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure Bearer authorization: BearerAuth
+configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://localhost/api
 configuration.host = "https://localhost/api"
@@ -930,7 +902,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -954,7 +926,7 @@ Needs role: app-chars.<br>It is possible that an account has no main character.
 
 ### Example
 
-* Api Key Authentication (Bearer):
+* Bearer Authentication (BearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -962,10 +934,8 @@ import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
 configuration = neucore_api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure Bearer authorization: BearerAuth
+configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://localhost/api
 configuration.host = "https://localhost/api"
@@ -993,7 +963,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -1019,7 +989,7 @@ Needs role: app-chars.<br>It is possible that an account has no main character.
 
 ### Example
 
-* Api Key Authentication (Bearer):
+* Bearer Authentication (BearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -1027,10 +997,8 @@ import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
 configuration = neucore_api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure Bearer authorization: BearerAuth
+configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://localhost/api
 configuration.host = "https://localhost/api"
@@ -1058,7 +1026,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -1084,7 +1052,7 @@ Needs role: app-tracking
 
 ### Example
 
-* Api Key Authentication (Bearer):
+* Bearer Authentication (BearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -1092,10 +1060,8 @@ import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
 configuration = neucore_api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure Bearer authorization: BearerAuth
+configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://localhost/api
 configuration.host = "https://localhost/api"
@@ -1129,7 +1095,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -1153,7 +1119,7 @@ Needs role: app-chars.
 
 ### Example
 
-* Api Key Authentication (Bearer):
+* Bearer Authentication (BearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -1161,10 +1127,8 @@ import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
 configuration = neucore_api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure Bearer authorization: BearerAuth
+configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://localhost/api
 configuration.host = "https://localhost/api"
@@ -1192,7 +1156,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -1217,7 +1181,7 @@ Needs role: app-chars.
 
 ### Example
 
-* Api Key Authentication (Bearer):
+* Bearer Authentication (BearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -1225,10 +1189,8 @@ import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
 configuration = neucore_api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure Bearer authorization: BearerAuth
+configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://localhost/api
 configuration.host = "https://localhost/api"
@@ -1256,7 +1218,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -1281,7 +1243,7 @@ Needs role: app-chars.
 
 ### Example
 
-* Api Key Authentication (Bearer):
+* Bearer Authentication (BearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -1289,10 +1251,8 @@ import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
 configuration = neucore_api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure Bearer authorization: BearerAuth
+configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://localhost/api
 configuration.host = "https://localhost/api"
@@ -1320,7 +1280,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -1345,7 +1305,7 @@ Needs role: app
 
 ### Example
 
-* Api Key Authentication (Bearer):
+* Bearer Authentication (BearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -1353,10 +1313,8 @@ import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
 configuration = neucore_api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure Bearer authorization: BearerAuth
+configuration.access_token = 'YOUR_BEARER_TOKEN'
 
 # Defining host is optional and default to https://localhost/api
 configuration.host = "https://localhost/api"
@@ -1380,7 +1338,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 

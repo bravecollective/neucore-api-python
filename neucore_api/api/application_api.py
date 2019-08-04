@@ -36,17 +36,17 @@ class ApplicationApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def alliance_groups_bulk_v1(self, ids, **kwargs):  # noqa: E501
+    def alliance_groups_bulk_v1(self, request_body, **kwargs):  # noqa: E501
         """Return groups of multiple alliances.  # noqa: E501
 
         Needs role: app-groups.<br>      *                  Returns only groups that have been added to the app as well.      *                  Skips alliances that are not found in the local database.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.alliance_groups_bulk_v1(ids, async_req=True)
+        >>> thread = api.alliance_groups_bulk_v1(request_body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param list[int] ids: EVE alliance IDs array. (required)
+        :param list[int] request_body: EVE alliance IDs array. (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -59,19 +59,19 @@ class ApplicationApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.alliance_groups_bulk_v1_with_http_info(ids, **kwargs)  # noqa: E501
+        return self.alliance_groups_bulk_v1_with_http_info(request_body, **kwargs)  # noqa: E501
 
-    def alliance_groups_bulk_v1_with_http_info(self, ids, **kwargs):  # noqa: E501
+    def alliance_groups_bulk_v1_with_http_info(self, request_body, **kwargs):  # noqa: E501
         """Return groups of multiple alliances.  # noqa: E501
 
         Needs role: app-groups.<br>      *                  Returns only groups that have been added to the app as well.      *                  Skips alliances that are not found in the local database.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.alliance_groups_bulk_v1_with_http_info(ids, async_req=True)
+        >>> thread = api.alliance_groups_bulk_v1_with_http_info(request_body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param list[int] ids: EVE alliance IDs array. (required)
+        :param list[int] request_body: EVE alliance IDs array. (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -88,7 +88,7 @@ class ApplicationApi(object):
 
         local_var_params = locals()
 
-        all_params = ['ids']  # noqa: E501
+        all_params = ['request_body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -102,10 +102,10 @@ class ApplicationApi(object):
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
-        # verify the required parameter 'ids' is set
-        if ('ids' not in local_var_params or
-                local_var_params['ids'] is None):
-            raise ApiValueError("Missing the required parameter `ids` when calling `alliance_groups_bulk_v1`")  # noqa: E501
+        # verify the required parameter 'request_body' is set
+        if ('request_body' not in local_var_params or
+                local_var_params['request_body'] is None):
+            raise ApiValueError("Missing the required parameter `request_body` when calling `alliance_groups_bulk_v1`")  # noqa: E501
 
         collection_formats = {}
 
@@ -119,14 +119,18 @@ class ApplicationApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'ids' in local_var_params:
-            body_params = local_var_params['ids']
+        if 'request_body' in local_var_params:
+            body_params = local_var_params['request_body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
 
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ['BearerAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/app/v1/alliance-groups', 'POST',
@@ -234,7 +238,7 @@ class ApplicationApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ['BearerAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/app/v1/alliance-groups/{aid}', 'GET',
@@ -342,7 +346,7 @@ class ApplicationApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ['BearerAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/app/v2/alliance-groups/{aid}', 'GET',
@@ -450,7 +454,7 @@ class ApplicationApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ['BearerAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/app/v1/characters/{characterId}', 'GET',
@@ -468,17 +472,17 @@ class ApplicationApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def corp_groups_bulk_v1(self, ids, **kwargs):  # noqa: E501
+    def corp_groups_bulk_v1(self, request_body, **kwargs):  # noqa: E501
         """Return groups of multiple corporations.  # noqa: E501
 
         Needs role: app-groups.<br>      *                  Returns only groups that have been added to the app as well.      *                  Skips corporations that are not found in the local database.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.corp_groups_bulk_v1(ids, async_req=True)
+        >>> thread = api.corp_groups_bulk_v1(request_body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param list[int] ids: EVE corporation IDs array. (required)
+        :param list[int] request_body: EVE corporation IDs array. (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -491,19 +495,19 @@ class ApplicationApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.corp_groups_bulk_v1_with_http_info(ids, **kwargs)  # noqa: E501
+        return self.corp_groups_bulk_v1_with_http_info(request_body, **kwargs)  # noqa: E501
 
-    def corp_groups_bulk_v1_with_http_info(self, ids, **kwargs):  # noqa: E501
+    def corp_groups_bulk_v1_with_http_info(self, request_body, **kwargs):  # noqa: E501
         """Return groups of multiple corporations.  # noqa: E501
 
         Needs role: app-groups.<br>      *                  Returns only groups that have been added to the app as well.      *                  Skips corporations that are not found in the local database.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.corp_groups_bulk_v1_with_http_info(ids, async_req=True)
+        >>> thread = api.corp_groups_bulk_v1_with_http_info(request_body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param list[int] ids: EVE corporation IDs array. (required)
+        :param list[int] request_body: EVE corporation IDs array. (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -520,7 +524,7 @@ class ApplicationApi(object):
 
         local_var_params = locals()
 
-        all_params = ['ids']  # noqa: E501
+        all_params = ['request_body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -534,10 +538,10 @@ class ApplicationApi(object):
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
-        # verify the required parameter 'ids' is set
-        if ('ids' not in local_var_params or
-                local_var_params['ids'] is None):
-            raise ApiValueError("Missing the required parameter `ids` when calling `corp_groups_bulk_v1`")  # noqa: E501
+        # verify the required parameter 'request_body' is set
+        if ('request_body' not in local_var_params or
+                local_var_params['request_body'] is None):
+            raise ApiValueError("Missing the required parameter `request_body` when calling `corp_groups_bulk_v1`")  # noqa: E501
 
         collection_formats = {}
 
@@ -551,14 +555,18 @@ class ApplicationApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'ids' in local_var_params:
-            body_params = local_var_params['ids']
+        if 'request_body' in local_var_params:
+            body_params = local_var_params['request_body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
 
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ['BearerAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/app/v1/corp-groups', 'POST',
@@ -666,7 +674,7 @@ class ApplicationApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ['BearerAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/app/v1/corp-groups/{cid}', 'GET',
@@ -774,7 +782,7 @@ class ApplicationApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ['BearerAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/app/v2/corp-groups/{cid}', 'GET',
@@ -882,7 +890,7 @@ class ApplicationApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ['BearerAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/app/v1/corp-players/{corporationId}', 'GET',
@@ -900,19 +908,19 @@ class ApplicationApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def esi_post_v1(self, esi_path_query, datasource, data, **kwargs):  # noqa: E501
+    def esi_post_v1(self, esi_path_query, datasource, body, **kwargs):  # noqa: E501
         """Makes an ESI POST request on behalf on an EVE character and returns the result.  # noqa: E501
 
         Needs role: app-esi<br>      *         Public ESI routes are not allowed.<br>      *         The following headers from ESI are passed through to the response:                Content-Type Expires X-Esi-Error-Limit-Remain X-Esi-Error-Limit-Reset X-Pages warning<br>      *         The HTTP status code from ESI is also passed through, so maybe there's more than the documented.<br>      *         The ESI path and query parameters can alternatively be appended to the path of this endpoint,                see doc/app-esi-examples.php for more.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.esi_post_v1(esi_path_query, datasource, data, async_req=True)
+        >>> thread = api.esi_post_v1(esi_path_query, datasource, body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str esi_path_query: The ESI path and query string (without the datasource parameter). (required)
         :param str datasource: The EVE character ID those token should be used to make the ESI request (required)
-        :param str data: JSON encoded data. (required)
+        :param str body: JSON encoded data. (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -925,21 +933,21 @@ class ApplicationApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.esi_post_v1_with_http_info(esi_path_query, datasource, data, **kwargs)  # noqa: E501
+        return self.esi_post_v1_with_http_info(esi_path_query, datasource, body, **kwargs)  # noqa: E501
 
-    def esi_post_v1_with_http_info(self, esi_path_query, datasource, data, **kwargs):  # noqa: E501
+    def esi_post_v1_with_http_info(self, esi_path_query, datasource, body, **kwargs):  # noqa: E501
         """Makes an ESI POST request on behalf on an EVE character and returns the result.  # noqa: E501
 
         Needs role: app-esi<br>      *         Public ESI routes are not allowed.<br>      *         The following headers from ESI are passed through to the response:                Content-Type Expires X-Esi-Error-Limit-Remain X-Esi-Error-Limit-Reset X-Pages warning<br>      *         The HTTP status code from ESI is also passed through, so maybe there's more than the documented.<br>      *         The ESI path and query parameters can alternatively be appended to the path of this endpoint,                see doc/app-esi-examples.php for more.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.esi_post_v1_with_http_info(esi_path_query, datasource, data, async_req=True)
+        >>> thread = api.esi_post_v1_with_http_info(esi_path_query, datasource, body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str esi_path_query: The ESI path and query string (without the datasource parameter). (required)
         :param str datasource: The EVE character ID those token should be used to make the ESI request (required)
-        :param str data: JSON encoded data. (required)
+        :param str body: JSON encoded data. (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -956,7 +964,7 @@ class ApplicationApi(object):
 
         local_var_params = locals()
 
-        all_params = ['esi_path_query', 'datasource', 'data']  # noqa: E501
+        all_params = ['esi_path_query', 'datasource', 'body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -978,10 +986,10 @@ class ApplicationApi(object):
         if ('datasource' not in local_var_params or
                 local_var_params['datasource'] is None):
             raise ApiValueError("Missing the required parameter `datasource` when calling `esi_post_v1`")  # noqa: E501
-        # verify the required parameter 'data' is set
-        if ('data' not in local_var_params or
-                local_var_params['data'] is None):
-            raise ApiValueError("Missing the required parameter `data` when calling `esi_post_v1`")  # noqa: E501
+        # verify the required parameter 'body' is set
+        if ('body' not in local_var_params or
+                local_var_params['body'] is None):
+            raise ApiValueError("Missing the required parameter `body` when calling `esi_post_v1`")  # noqa: E501
 
         collection_formats = {}
 
@@ -999,8 +1007,8 @@ class ApplicationApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'data' in local_var_params:
-            body_params = local_var_params['data']
+        if 'body' in local_var_params:
+            body_params = local_var_params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
@@ -1010,7 +1018,7 @@ class ApplicationApi(object):
             ['text/plain'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ['BearerAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/app/v1/esi', 'POST',
@@ -1126,7 +1134,7 @@ class ApplicationApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ['BearerAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/app/v1/esi', 'GET',
@@ -1144,17 +1152,17 @@ class ApplicationApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def groups_bulk_v1(self, ids, **kwargs):  # noqa: E501
+    def groups_bulk_v1(self, request_body, **kwargs):  # noqa: E501
         """Return groups of multiple players, identified by one of their character IDs.  # noqa: E501
 
         Needs role: app-groups.<br>      *                  Returns only groups that have been added to the app as well.      *                  Skips characters that are not found in the local database.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.groups_bulk_v1(ids, async_req=True)
+        >>> thread = api.groups_bulk_v1(request_body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param list[int] ids: EVE character IDs array. (required)
+        :param list[int] request_body: EVE character IDs array. (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1167,19 +1175,19 @@ class ApplicationApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.groups_bulk_v1_with_http_info(ids, **kwargs)  # noqa: E501
+        return self.groups_bulk_v1_with_http_info(request_body, **kwargs)  # noqa: E501
 
-    def groups_bulk_v1_with_http_info(self, ids, **kwargs):  # noqa: E501
+    def groups_bulk_v1_with_http_info(self, request_body, **kwargs):  # noqa: E501
         """Return groups of multiple players, identified by one of their character IDs.  # noqa: E501
 
         Needs role: app-groups.<br>      *                  Returns only groups that have been added to the app as well.      *                  Skips characters that are not found in the local database.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.groups_bulk_v1_with_http_info(ids, async_req=True)
+        >>> thread = api.groups_bulk_v1_with_http_info(request_body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param list[int] ids: EVE character IDs array. (required)
+        :param list[int] request_body: EVE character IDs array. (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1196,7 +1204,7 @@ class ApplicationApi(object):
 
         local_var_params = locals()
 
-        all_params = ['ids']  # noqa: E501
+        all_params = ['request_body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1210,10 +1218,10 @@ class ApplicationApi(object):
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
-        # verify the required parameter 'ids' is set
-        if ('ids' not in local_var_params or
-                local_var_params['ids'] is None):
-            raise ApiValueError("Missing the required parameter `ids` when calling `groups_bulk_v1`")  # noqa: E501
+        # verify the required parameter 'request_body' is set
+        if ('request_body' not in local_var_params or
+                local_var_params['request_body'] is None):
+            raise ApiValueError("Missing the required parameter `request_body` when calling `groups_bulk_v1`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1227,14 +1235,18 @@ class ApplicationApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'ids' in local_var_params:
-            body_params = local_var_params['ids']
+        if 'request_body' in local_var_params:
+            body_params = local_var_params['request_body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
 
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ['BearerAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/app/v1/groups', 'POST',
@@ -1342,7 +1354,7 @@ class ApplicationApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ['BearerAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/app/v1/groups/{cid}', 'GET',
@@ -1450,7 +1462,7 @@ class ApplicationApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ['BearerAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/app/v2/groups/{cid}', 'GET',
@@ -1570,7 +1582,7 @@ class ApplicationApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ['BearerAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/app/v1/groups-with-fallback', 'GET',
@@ -1678,7 +1690,7 @@ class ApplicationApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ['BearerAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/app/v1/main/{cid}', 'GET',
@@ -1786,7 +1798,7 @@ class ApplicationApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ['BearerAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/app/v2/main/{cid}', 'GET',
@@ -1906,7 +1918,7 @@ class ApplicationApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ['BearerAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/app/v1/corporation/{id}/member-tracking', 'GET',
@@ -2014,7 +2026,7 @@ class ApplicationApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ['BearerAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/app/v1/player-chars/{playerId}', 'GET',
@@ -2122,7 +2134,7 @@ class ApplicationApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ['BearerAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/app/v1/player/{characterId}', 'GET',
@@ -2230,7 +2242,7 @@ class ApplicationApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ['BearerAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/app/v1/removed-characters/{characterId}', 'GET',
@@ -2330,7 +2342,7 @@ class ApplicationApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ['BearerAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/app/v1/show', 'GET',
