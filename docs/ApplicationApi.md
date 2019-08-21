@@ -588,7 +588,7 @@ Name | Type | Description  | Notes
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **420** | Error limited |  -  |
-**429** | Maximum permissible ESI error limit reached (this is lower than X-Esi-Error-Limit-Remain). |  -  |
+**429** | Maximum permissible ESI error limit reached (X-Esi-Error-Limit-Remain &lt;&#x3D; 20). |  -  |
 **500** | Internal server error |  -  |
 **503** | Service unavailable |  -  |
 **504** | Gateway timeout |  -  |
@@ -659,7 +659,7 @@ Name | Type | Description  | Notes
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **420** | Error limited |  -  |
-**429** | Maximum permissible ESI error limit reached (this is lower than X-Esi-Error-Limit-Remain). |  -  |
+**429** | Maximum permissible ESI error limit reached (X-Esi-Error-Limit-Remain &lt;&#x3D; 20). |  -  |
 **500** | Internal server error |  -  |
 **503** | Service unavailable |  -  |
 **504** | Gateway timeout |  -  |
