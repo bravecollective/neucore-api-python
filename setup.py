@@ -31,7 +31,7 @@ setup(
     url="https://github.com/bravecollective/neucore-api-python",
     keywords=["OpenAPI", "OpenAPI-Generator", "Neucore API"],
     install_requires=REQUIRES,
-    packages=find_packages(),
+    packages=find_packages(exclude=["test", "tests"]),
     include_package_data=True,
     long_description="""\
     Client library of Neucore API  # noqa: E501
