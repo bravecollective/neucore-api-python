@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **new_player_id** | **int** |  | [optional] 
 **new_player_name** | **str** |  | [optional] 
+**player** | [**Player**](Player.md) |  | [optional] 
 **character_id** | **int** | EVE character ID. | 
 **character_name** | **str** | EVE character name. | 
 **removed_date** | **datetime** | Date of removal. | 

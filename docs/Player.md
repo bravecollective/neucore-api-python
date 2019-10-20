@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **manager_groups** | [**list[Group]**](Group.md) | Manager of groups. | [optional] 
 **manager_apps** | [**list[App]**](App.md) | Manager of apps. | [optional] 
 **removed_characters** | [**list[RemovedCharacter]**](RemovedCharacter.md) | Characters that were removed from a player (API: not included by default). | [optional] 
+**incoming_characters** | [**list[RemovedCharacter]**](RemovedCharacter.md) | Characters that were moved from another player account to this account (API: not included by default). | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
