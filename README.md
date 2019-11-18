@@ -3,6 +3,11 @@ The version numbers correspond to the Neucore version numbers.
 When updating, check the generator version in .openapi-generator/VERSION, 
 a new version may break backwards compatibility.
 
+**Notes**
+
+- If you use the `esi_v1` or `esi_post_v1` method, you may need to set `_preload_content=False` to get 
+  a string that can be JSON decoded.
+
 **Breaking changes**
 
 - 1.4.0:  
