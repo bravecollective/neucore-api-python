@@ -1,5 +1,6 @@
 # GroupApplication
 
+The player property contains only id and name.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

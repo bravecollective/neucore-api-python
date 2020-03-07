@@ -1,5 +1,6 @@
 # CorporationMember
 
+The player property contains only id and name, character does not contain corporation.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
