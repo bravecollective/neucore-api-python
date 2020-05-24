@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**corp_groups_v1**](ApplicationApi.md#corp_groups_v1) | **GET** /app/v1/corp-groups/{cid} | Return groups of the corporation.
 [**corp_groups_v2**](ApplicationApi.md#corp_groups_v2) | **GET** /app/v2/corp-groups/{cid} | Return groups of the corporation.
 [**corporation_players_v1**](ApplicationApi.md#corporation_players_v1) | **GET** /app/v1/corp-players/{corporationId} | Return a list of all players that have a character in the corporation.
-[**esi_post_v1**](ApplicationApi.md#esi_post_v1) | **POST** /app/v1/esi | Same as GET ​/app​/v1​/esi, but for POST requests.
+[**esi_post_v1**](ApplicationApi.md#esi_post_v1) | **POST** /app/v1/esi | Same as GET​/app/v1/esi, but for POST requests.
 [**esi_v1**](ApplicationApi.md#esi_v1) | **GET** /app/v1/esi | Makes an ESI GET request on behalf on an EVE character and returns the result.
 [**groups_bulk_v1**](ApplicationApi.md#groups_bulk_v1) | **POST** /app/v1/groups | Return groups of multiple players, identified by one of their character IDs.
 [**groups_v1**](ApplicationApi.md#groups_v1) | **GET** /app/v1/groups/{cid} | Return groups of the character&#39;s player account.
@@ -24,6 +24,7 @@ Method | HTTP request | Description
 [**member_tracking_v1**](ApplicationApi.md#member_tracking_v1) | **GET** /app/v1/corporation/{id}/member-tracking | Return corporation member tracking data.
 [**player_characters_v1**](ApplicationApi.md#player_characters_v1) | **GET** /app/v1/player-chars/{playerId} | Return all characters from the player account.
 [**player_v1**](ApplicationApi.md#player_v1) | **GET** /app/v1/player/{characterId} | Return the player account to which the character ID belongs.
+[**player_with_characters_v1**](ApplicationApi.md#player_with_characters_v1) | **GET** /app/v1/player-with-characters/{characterId} | Return the player account to which the character ID belongs with all characters.
 [**removed_characters_v1**](ApplicationApi.md#removed_characters_v1) | **GET** /app/v1/removed-characters/{characterId} | Return all characters that were removed from the player account to which the character ID belongs.
 [**show_v1**](ApplicationApi.md#show_v1) | **GET** /app/v1/show | Show app information.
 
@@ -44,12 +45,22 @@ import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-configuration = neucore_api.Configuration()
-# Configure Bearer authorization: BearerAuth
-configuration.access_token = 'YOUR_BEARER_TOKEN'
+# Defining the host is optional and defaults to https://localhost/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neucore_api.Configuration(
+    host = "https://localhost/api"
+)
 
-# Defining host is optional and default to https://localhost/api
-configuration.host = "https://localhost/api"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = neucore_api.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -108,12 +119,22 @@ import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-configuration = neucore_api.Configuration()
-# Configure Bearer authorization: BearerAuth
-configuration.access_token = 'YOUR_BEARER_TOKEN'
+# Defining the host is optional and defaults to https://localhost/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neucore_api.Configuration(
+    host = "https://localhost/api"
+)
 
-# Defining host is optional and default to https://localhost/api
-configuration.host = "https://localhost/api"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = neucore_api.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -172,12 +193,22 @@ import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-configuration = neucore_api.Configuration()
-# Configure Bearer authorization: BearerAuth
-configuration.access_token = 'YOUR_BEARER_TOKEN'
+# Defining the host is optional and defaults to https://localhost/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neucore_api.Configuration(
+    host = "https://localhost/api"
+)
 
-# Defining host is optional and default to https://localhost/api
-configuration.host = "https://localhost/api"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = neucore_api.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -236,12 +267,22 @@ import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-configuration = neucore_api.Configuration()
-# Configure Bearer authorization: BearerAuth
-configuration.access_token = 'YOUR_BEARER_TOKEN'
+# Defining the host is optional and defaults to https://localhost/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neucore_api.Configuration(
+    host = "https://localhost/api"
+)
 
-# Defining host is optional and default to https://localhost/api
-configuration.host = "https://localhost/api"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = neucore_api.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -280,7 +321,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | All characters from the player account. |  -  |
 **403** | Not authorized. |  -  |
-**404** | Character (or player) not found. |  -  |
+**404** | Character not found. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -300,12 +341,22 @@ import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-configuration = neucore_api.Configuration()
-# Configure Bearer authorization: BearerAuth
-configuration.access_token = 'YOUR_BEARER_TOKEN'
+# Defining the host is optional and defaults to https://localhost/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neucore_api.Configuration(
+    host = "https://localhost/api"
+)
 
-# Defining host is optional and default to https://localhost/api
-configuration.host = "https://localhost/api"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = neucore_api.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -364,12 +415,22 @@ import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-configuration = neucore_api.Configuration()
-# Configure Bearer authorization: BearerAuth
-configuration.access_token = 'YOUR_BEARER_TOKEN'
+# Defining the host is optional and defaults to https://localhost/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neucore_api.Configuration(
+    host = "https://localhost/api"
+)
 
-# Defining host is optional and default to https://localhost/api
-configuration.host = "https://localhost/api"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = neucore_api.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -428,12 +489,22 @@ import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-configuration = neucore_api.Configuration()
-# Configure Bearer authorization: BearerAuth
-configuration.access_token = 'YOUR_BEARER_TOKEN'
+# Defining the host is optional and defaults to https://localhost/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neucore_api.Configuration(
+    host = "https://localhost/api"
+)
 
-# Defining host is optional and default to https://localhost/api
-configuration.host = "https://localhost/api"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = neucore_api.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -492,12 +563,22 @@ import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-configuration = neucore_api.Configuration()
-# Configure Bearer authorization: BearerAuth
-configuration.access_token = 'YOUR_BEARER_TOKEN'
+# Defining the host is optional and defaults to https://localhost/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neucore_api.Configuration(
+    host = "https://localhost/api"
+)
 
-# Defining host is optional and default to https://localhost/api
-configuration.host = "https://localhost/api"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = neucore_api.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -542,7 +623,7 @@ Name | Type | Description  | Notes
 # **esi_post_v1**
 > str esi_post_v1(esi_path_query, datasource, body)
 
-Same as GET ​/app​/v1​/esi, but for POST requests.
+Same as GET​/app/v1/esi, but for POST requests.
 
 ### Example
 
@@ -553,12 +634,22 @@ import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-configuration = neucore_api.Configuration()
-# Configure Bearer authorization: BearerAuth
-configuration.access_token = 'YOUR_BEARER_TOKEN'
+# Defining the host is optional and defaults to https://localhost/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neucore_api.Configuration(
+    host = "https://localhost/api"
+)
 
-# Defining host is optional and default to https://localhost/api
-configuration.host = "https://localhost/api"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = neucore_api.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -568,7 +659,7 @@ datasource = 'datasource_example' # str | The EVE character ID those token shoul
 body = 'body_example' # str | JSON encoded data.
 
     try:
-        # Same as GET ​/app​/v1​/esi, but for POST requests.
+        # Same as GET​/app/v1/esi, but for POST requests.
         api_response = api_instance.esi_post_v1(esi_path_query, datasource, body)
         pprint(api_response)
     except ApiException as e:
@@ -605,7 +696,7 @@ Name | Type | Description  | Notes
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **420** | Error limited |  -  |
-**429** | Maximum permissible ESI error limit reached (X-Esi-Error-Limit-Remain &lt;&#x3D; 20). |  -  |
+**429** | Maximum permissible ESI error limit reached (X-Esi-Error-Limit-Remain &lt;&#x3D; 20)                             or API rate limit exceeded. |  -  |
 **500** | Internal server error |  -  |
 **503** | Service unavailable |  -  |
 **504** | Gateway timeout |  -  |
@@ -617,7 +708,7 @@ Name | Type | Description  | Notes
 
 Makes an ESI GET request on behalf on an EVE character and returns the result.
 
-Needs role: app-esi<br>      *         Public ESI routes are not allowed.<br>      *         The following headers from ESI are passed through to the response:                Content-Type Expires X-Esi-Error-Limit-Remain X-Esi-Error-Limit-Reset X-Pages warning<br>      *         The HTTP status code from ESI is also passed through, so maybe there's more than the documented.<br>      *         The ESI path and query parameters can alternatively be appended to the path of this endpoint,                this allows to use OpenAPI clients that were generated for the ESI API,                see doc/app-esi-examples.php for more.
+Needs role: app-esi<br>      *         Public ESI routes are not allowed.<br>      *         The following headers from ESI are passed through to the response if they exist:                Content-Type Expires X-Esi-Error-Limit-Remain X-Esi-Error-Limit-Reset X-Pages warning, Warning<br>      *         The HTTP status code from ESI is also passed through, so maybe there's more than the documented.<br>      *         The ESI path and query parameters can alternatively be appended to the path of this endpoint,                this allows to use OpenAPI clients that were generated for the ESI API,                see doc/app-esi-examples.php for more.
 
 ### Example
 
@@ -628,12 +719,22 @@ import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-configuration = neucore_api.Configuration()
-# Configure Bearer authorization: BearerAuth
-configuration.access_token = 'YOUR_BEARER_TOKEN'
+# Defining the host is optional and defaults to https://localhost/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neucore_api.Configuration(
+    host = "https://localhost/api"
+)
 
-# Defining host is optional and default to https://localhost/api
-configuration.host = "https://localhost/api"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = neucore_api.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -678,7 +779,7 @@ Name | Type | Description  | Notes
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **420** | Error limited |  -  |
-**429** | Maximum permissible ESI error limit reached (X-Esi-Error-Limit-Remain &lt;&#x3D; 20). |  -  |
+**429** | Maximum permissible ESI error limit reached (X-Esi-Error-Limit-Remain &lt;&#x3D; 20)                             or API rate limit exceeded. |  -  |
 **500** | Internal server error |  -  |
 **503** | Service unavailable |  -  |
 **504** | Gateway timeout |  -  |
@@ -701,12 +802,22 @@ import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-configuration = neucore_api.Configuration()
-# Configure Bearer authorization: BearerAuth
-configuration.access_token = 'YOUR_BEARER_TOKEN'
+# Defining the host is optional and defaults to https://localhost/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neucore_api.Configuration(
+    host = "https://localhost/api"
+)
 
-# Defining host is optional and default to https://localhost/api
-configuration.host = "https://localhost/api"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = neucore_api.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -765,12 +876,22 @@ import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-configuration = neucore_api.Configuration()
-# Configure Bearer authorization: BearerAuth
-configuration.access_token = 'YOUR_BEARER_TOKEN'
+# Defining the host is optional and defaults to https://localhost/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neucore_api.Configuration(
+    host = "https://localhost/api"
+)
 
-# Defining host is optional and default to https://localhost/api
-configuration.host = "https://localhost/api"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = neucore_api.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -829,12 +950,22 @@ import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-configuration = neucore_api.Configuration()
-# Configure Bearer authorization: BearerAuth
-configuration.access_token = 'YOUR_BEARER_TOKEN'
+# Defining the host is optional and defaults to https://localhost/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neucore_api.Configuration(
+    host = "https://localhost/api"
+)
 
-# Defining host is optional and default to https://localhost/api
-configuration.host = "https://localhost/api"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = neucore_api.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -893,12 +1024,22 @@ import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-configuration = neucore_api.Configuration()
-# Configure Bearer authorization: BearerAuth
-configuration.access_token = 'YOUR_BEARER_TOKEN'
+# Defining the host is optional and defaults to https://localhost/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neucore_api.Configuration(
+    host = "https://localhost/api"
+)
 
-# Defining host is optional and default to https://localhost/api
-configuration.host = "https://localhost/api"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = neucore_api.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -960,12 +1101,22 @@ import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-configuration = neucore_api.Configuration()
-# Configure Bearer authorization: BearerAuth
-configuration.access_token = 'YOUR_BEARER_TOKEN'
+# Defining the host is optional and defaults to https://localhost/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neucore_api.Configuration(
+    host = "https://localhost/api"
+)
 
-# Defining host is optional and default to https://localhost/api
-configuration.host = "https://localhost/api"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = neucore_api.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -1004,7 +1155,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | All incoming characters from the player account. |  -  |
 **403** | Not authorized. |  -  |
-**404** | Character (or player) not found. |  -  |
+**404** | Character not found. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1024,12 +1175,22 @@ import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-configuration = neucore_api.Configuration()
-# Configure Bearer authorization: BearerAuth
-configuration.access_token = 'YOUR_BEARER_TOKEN'
+# Defining the host is optional and defaults to https://localhost/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neucore_api.Configuration(
+    host = "https://localhost/api"
+)
 
-# Defining host is optional and default to https://localhost/api
-configuration.host = "https://localhost/api"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = neucore_api.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -1069,7 +1230,7 @@ Name | Type | Description  | Notes
 **200** | The main character |  -  |
 **204** | No main character found. |  -  |
 **403** | Not authorized. |  -  |
-**404** | Character (or player) not found. (default reason phrase) |  -  |
+**404** | Character not found. (default reason phrase) |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1089,12 +1250,22 @@ import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-configuration = neucore_api.Configuration()
-# Configure Bearer authorization: BearerAuth
-configuration.access_token = 'YOUR_BEARER_TOKEN'
+# Defining the host is optional and defaults to https://localhost/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neucore_api.Configuration(
+    host = "https://localhost/api"
+)
 
-# Defining host is optional and default to https://localhost/api
-configuration.host = "https://localhost/api"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = neucore_api.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -1154,12 +1325,22 @@ import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-configuration = neucore_api.Configuration()
-# Configure Bearer authorization: BearerAuth
-configuration.access_token = 'YOUR_BEARER_TOKEN'
+# Defining the host is optional and defaults to https://localhost/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neucore_api.Configuration(
+    host = "https://localhost/api"
+)
 
-# Defining host is optional and default to https://localhost/api
-configuration.host = "https://localhost/api"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = neucore_api.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -1223,12 +1404,22 @@ import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-configuration = neucore_api.Configuration()
-# Configure Bearer authorization: BearerAuth
-configuration.access_token = 'YOUR_BEARER_TOKEN'
+# Defining the host is optional and defaults to https://localhost/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neucore_api.Configuration(
+    host = "https://localhost/api"
+)
 
-# Defining host is optional and default to https://localhost/api
-configuration.host = "https://localhost/api"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = neucore_api.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -1287,12 +1478,22 @@ import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-configuration = neucore_api.Configuration()
-# Configure Bearer authorization: BearerAuth
-configuration.access_token = 'YOUR_BEARER_TOKEN'
+# Defining the host is optional and defaults to https://localhost/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neucore_api.Configuration(
+    host = "https://localhost/api"
+)
 
-# Defining host is optional and default to https://localhost/api
-configuration.host = "https://localhost/api"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = neucore_api.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -1335,6 +1536,80 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **player_with_characters_v1**
+> Player player_with_characters_v1(character_id)
+
+Return the player account to which the character ID belongs with all characters.
+
+Needs role: app-chars.
+
+### Example
+
+* Bearer Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import neucore_api
+from neucore_api.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://localhost/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neucore_api.Configuration(
+    host = "https://localhost/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = neucore_api.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
+# Enter a context with an instance of the API client
+with neucore_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neucore_api.ApplicationApi(api_client)
+    character_id = 56 # int | EVE character ID.
+
+    try:
+        # Return the player account to which the character ID belongs with all characters.
+        api_response = api_instance.player_with_characters_v1(character_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ApplicationApi->player_with_characters_v1: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **character_id** | **int**| EVE character ID. | 
+
+### Return type
+
+[**Player**](Player.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The player, only id, name and characters properties are returned. |  -  |
+**403** | Not authorized. |  -  |
+**404** | Character not found. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **removed_characters_v1**
 > list[RemovedCharacter] removed_characters_v1(character_id)
 
@@ -1351,12 +1626,22 @@ import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-configuration = neucore_api.Configuration()
-# Configure Bearer authorization: BearerAuth
-configuration.access_token = 'YOUR_BEARER_TOKEN'
+# Defining the host is optional and defaults to https://localhost/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neucore_api.Configuration(
+    host = "https://localhost/api"
+)
 
-# Defining host is optional and default to https://localhost/api
-configuration.host = "https://localhost/api"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = neucore_api.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -1395,7 +1680,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | All removed characters from the player account. |  -  |
 **403** | Not authorized. |  -  |
-**404** | Character (or player) not found. |  -  |
+**404** | Character not found. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1415,12 +1700,22 @@ import time
 import neucore_api
 from neucore_api.rest import ApiException
 from pprint import pprint
-configuration = neucore_api.Configuration()
-# Configure Bearer authorization: BearerAuth
-configuration.access_token = 'YOUR_BEARER_TOKEN'
+# Defining the host is optional and defaults to https://localhost/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neucore_api.Configuration(
+    host = "https://localhost/api"
+)
 
-# Defining host is optional and default to https://localhost/api
-configuration.host = "https://localhost/api"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = neucore_api.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class

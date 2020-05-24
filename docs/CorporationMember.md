@@ -13,6 +13,9 @@ Name | Type | Description | Notes
 **ship_type** | [**EsiType**](EsiType.md) |  | [optional] 
 **start_date** | **datetime** |  | [optional] 
 **character** | [**Character**](Character.md) |  | [optional] 
+**missing_character_mail_sent_date** | **datetime** | Date and time of the last sent mail. | [optional] 
+**missing_character_mail_sent_result** | **str** | Result of the last sent mail (OK, Blocked, CSPA charge &gt; 0) | [optional] 
+**missing_character_mail_sent_number** | **int** | Number of mails sent, is reset when the character is added. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
