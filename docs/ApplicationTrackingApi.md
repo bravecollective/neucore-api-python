@@ -1,18 +1,18 @@
-# neucore_api.ApplicationApi
+# neucore_api.ApplicationTrackingApi
 
 All URIs are relative to *https://localhost/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**show_v1**](ApplicationApi.md#show_v1) | **GET** /app/v1/show | Show app information.
+[**member_tracking_v1**](ApplicationTrackingApi.md#member_tracking_v1) | **GET** /app/v1/corporation/{id}/member-tracking | Return corporation member tracking data.
 
 
-# **show_v1**
-> App show_v1()
+# **member_tracking_v1**
+> list[CorporationMember] member_tracking_v1(id, inactive=inactive, active=active, account=account)
 
-Show app information.
+Return corporation member tracking data.
 
-Needs role: app
+Needs role: app-tracking
 
 ### Example
 
@@ -42,22 +42,32 @@ configuration = neucore_api.Configuration(
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = neucore_api.ApplicationApi(api_client)
-    
+    api_instance = neucore_api.ApplicationTrackingApi(api_client)
+    id = 56 # int | EVE corporation ID.
+inactive = 56 # int | Limit to members who have been inactive for x days or longer. (optional)
+active = 56 # int | Limit to members who were active in the last x days. (optional)
+account = 'account_example' # str | Limit to members with (true) or without (false) an account. (optional)
+
     try:
-        # Show app information.
-        api_response = api_instance.show_v1()
+        # Return corporation member tracking data.
+        api_response = api_instance.member_tracking_v1(id, inactive=inactive, active=active, account=account)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling ApplicationApi->show_v1: %s\n" % e)
+        print("Exception when calling ApplicationTrackingApi->member_tracking_v1: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| EVE corporation ID. | 
+ **inactive** | **int**| Limit to members who have been inactive for x days or longer. | [optional] 
+ **active** | **int**| Limit to members who were active in the last x days. | [optional] 
+ **account** | **str**| Limit to members with (true) or without (false) an account. | [optional] 
 
 ### Return type
 
-[**App**](App.md)
+[**list[CorporationMember]**](CorporationMember.md)
 
 ### Authorization
 
@@ -71,7 +81,7 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | The app information |  -  |
+**200** | Members ordered by logonDate descending (character and player properties excluded). |  -  |
 **403** | Not authorized. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
