@@ -17,10 +17,9 @@ Same as GET /app/v1/esi, but for POST requests.
 
 * Bearer Authentication (BearerAuth):
 ```python
-from __future__ import print_function
 import time
 import neucore_api
-from neucore_api.rest import ApiException
+from neucore_api.api import application___esi_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://localhost/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -41,26 +40,28 @@ configuration = neucore_api.Configuration(
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = neucore_api.ApplicationESIApi(api_client)
-    esi_path_query = 'esi_path_query_example' # str | The ESI path and query string (without the datasource parameter).
-datasource = 'datasource_example' # str | The EVE character ID those token should be used to make the ESI request
-body = 'body_example' # str | JSON encoded data.
+    api_instance = application___esi_api.ApplicationESIApi(api_client)
+    esi_path_query = "esi-path-query_example" # str | The ESI path and query string (without the datasource parameter).
+    datasource = "datasource_example" # str | The EVE character ID those token should be used to make the ESI request
+    body = "body_example" # str | JSON encoded data.
 
+    # example passing only required values which don't have defaults set
     try:
         # Same as GET /app/v1/esi, but for POST requests.
         api_response = api_instance.esi_post_v1(esi_path_query, datasource, body)
         pprint(api_response)
-    except ApiException as e:
+    except neucore_api.ApiException as e:
         print("Exception when calling ApplicationESIApi->esi_post_v1: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **esi_path_query** | **str**| The ESI path and query string (without the datasource parameter). | 
- **datasource** | **str**| The EVE character ID those token should be used to make the ESI request | 
- **body** | **str**| JSON encoded data. | 
+ **esi_path_query** | **str**| The ESI path and query string (without the datasource parameter). |
+ **datasource** | **str**| The EVE character ID those token should be used to make the ESI request |
+ **body** | **str**| JSON encoded data. |
 
 ### Return type
 
@@ -74,6 +75,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: text/plain
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -102,10 +104,9 @@ Needs role: app-esi<br>      *         Public ESI routes are not allowed.<br>   
 
 * Bearer Authentication (BearerAuth):
 ```python
-from __future__ import print_function
 import time
 import neucore_api
-from neucore_api.rest import ApiException
+from neucore_api.api import application___esi_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://localhost/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -126,24 +127,26 @@ configuration = neucore_api.Configuration(
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = neucore_api.ApplicationESIApi(api_client)
-    esi_path_query = 'esi_path_query_example' # str | The ESI path and query string (without the datasource parameter).
-datasource = 'datasource_example' # str | The EVE character ID those token should be used to make the ESI request
+    api_instance = application___esi_api.ApplicationESIApi(api_client)
+    esi_path_query = "esi-path-query_example" # str | The ESI path and query string (without the datasource parameter).
+    datasource = "datasource_example" # str | The EVE character ID those token should be used to make the ESI request
 
+    # example passing only required values which don't have defaults set
     try:
         # Makes an ESI GET request on behalf on an EVE character and returns the result.
         api_response = api_instance.esi_v1(esi_path_query, datasource)
         pprint(api_response)
-    except ApiException as e:
+    except neucore_api.ApiException as e:
         print("Exception when calling ApplicationESIApi->esi_v1: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **esi_path_query** | **str**| The ESI path and query string (without the datasource parameter). | 
- **datasource** | **str**| The EVE character ID those token should be used to make the ESI request | 
+ **esi_path_query** | **str**| The ESI path and query string (without the datasource parameter). |
+ **datasource** | **str**| The EVE character ID those token should be used to make the ESI request |
 
 ### Return type
 
@@ -157,6 +160,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

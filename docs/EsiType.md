@@ -1,5 +1,6 @@
 # EsiType
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

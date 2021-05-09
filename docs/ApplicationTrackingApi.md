@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **member_tracking_v1**
-> list[CorporationMember] member_tracking_v1(id, inactive=inactive, active=active, account=account)
+> [CorporationMember] member_tracking_v1(id)
 
 Return corporation member tracking data.
 
@@ -18,10 +18,10 @@ Needs role: app-tracking
 
 * Bearer Authentication (BearerAuth):
 ```python
-from __future__ import print_function
 import time
 import neucore_api
-from neucore_api.rest import ApiException
+from neucore_api.api import application___tracking_api
+from neucore_api.model.corporation_member import CorporationMember
 from pprint import pprint
 # Defining the host is optional and defaults to https://localhost/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -42,32 +42,43 @@ configuration = neucore_api.Configuration(
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = neucore_api.ApplicationTrackingApi(api_client)
-    id = 56 # int | EVE corporation ID.
-inactive = 56 # int | Limit to members who have been inactive for x days or longer. (optional)
-active = 56 # int | Limit to members who were active in the last x days. (optional)
-account = 'account_example' # str | Limit to members with (true) or without (false) an account. (optional)
+    api_instance = application___tracking_api.ApplicationTrackingApi(api_client)
+    id = 1 # int | EVE corporation ID.
+    inactive = 1 # int | Limit to members who have been inactive for x days or longer. (optional)
+    active = 1 # int | Limit to members who were active in the last x days. (optional)
+    account = "true" # str | Limit to members with (true) or without (false) an account. (optional)
 
+    # example passing only required values which don't have defaults set
+    try:
+        # Return corporation member tracking data.
+        api_response = api_instance.member_tracking_v1(id)
+        pprint(api_response)
+    except neucore_api.ApiException as e:
+        print("Exception when calling ApplicationTrackingApi->member_tracking_v1: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # Return corporation member tracking data.
         api_response = api_instance.member_tracking_v1(id, inactive=inactive, active=active, account=account)
         pprint(api_response)
-    except ApiException as e:
+    except neucore_api.ApiException as e:
         print("Exception when calling ApplicationTrackingApi->member_tracking_v1: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| EVE corporation ID. | 
- **inactive** | **int**| Limit to members who have been inactive for x days or longer. | [optional] 
- **active** | **int**| Limit to members who were active in the last x days. | [optional] 
- **account** | **str**| Limit to members with (true) or without (false) an account. | [optional] 
+ **id** | **int**| EVE corporation ID. |
+ **inactive** | **int**| Limit to members who have been inactive for x days or longer. | [optional]
+ **active** | **int**| Limit to members who were active in the last x days. | [optional]
+ **account** | **str**| Limit to members with (true) or without (false) an account. | [optional]
 
 ### Return type
 
-[**list[CorporationMember]**](CorporationMember.md)
+[**[CorporationMember]**](CorporationMember.md)
 
 ### Authorization
 
@@ -77,6 +88,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
