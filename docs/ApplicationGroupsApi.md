@@ -519,11 +519,21 @@ with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = application___groups_api.ApplicationGroupsApi(api_client)
     group_id = 1 # int | Group ID.
+    corporation = 1 # int | Limit to characters that are a member of this corporation. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Returns the main character IDs from all group members.
         api_response = api_instance.group_members_v1(group_id)
+        pprint(api_response)
+    except neucore_api.ApiException as e:
+        print("Exception when calling ApplicationGroupsApi->group_members_v1: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Returns the main character IDs from all group members.
+        api_response = api_instance.group_members_v1(group_id, corporation=corporation)
         pprint(api_response)
     except neucore_api.ApiException as e:
         print("Exception when calling ApplicationGroupsApi->group_members_v1: %s\n" % e)
@@ -535,6 +545,7 @@ with neucore_api.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **int**| Group ID. |
+ **corporation** | **int**| Limit to characters that are a member of this corporation. | [optional]
 
 ### Return type
 
