@@ -12,11 +12,11 @@ import sys
 import unittest
 
 import neucore_api
-from neucore_api.model.total_monthly_app_requests import TotalMonthlyAppRequests
+from neucore_api.model.eve_login import EveLogin
 
 
-class TestTotalMonthlyAppRequests(unittest.TestCase):
-    """TotalMonthlyAppRequests unit test stubs"""
+class TestEveLogin(unittest.TestCase):
+    """EveLogin unit test stubs"""
 
     def setUp(self):
         pass
@@ -24,10 +24,10 @@ class TestTotalMonthlyAppRequests(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testTotalMonthlyAppRequests(self):
-        """Test TotalMonthlyAppRequests"""
+    def testEveLogin(self):
+        """Test EveLogin"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = TotalMonthlyAppRequests()  # noqa: E501
+        # model = EveLogin()  # noqa: E501
         pass
 
 

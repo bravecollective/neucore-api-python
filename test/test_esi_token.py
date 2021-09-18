@@ -12,11 +12,11 @@ import sys
 import unittest
 
 import neucore_api
-from neucore_api.model.total_monthly_app_requests import TotalMonthlyAppRequests
+from neucore_api.model.esi_token import EsiToken
 
 
-class TestTotalMonthlyAppRequests(unittest.TestCase):
-    """TotalMonthlyAppRequests unit test stubs"""
+class TestEsiToken(unittest.TestCase):
+    """EsiToken unit test stubs"""
 
     def setUp(self):
         pass
@@ -24,10 +24,10 @@ class TestTotalMonthlyAppRequests(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testTotalMonthlyAppRequests(self):
-        """Test TotalMonthlyAppRequests"""
+    def testEsiToken(self):
+        """Test EsiToken"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = TotalMonthlyAppRequests()  # noqa: E501
+        # model = EsiToken()  # noqa: E501
         pass
 
 

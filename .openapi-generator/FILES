@@ -15,7 +15,9 @@ docs/CharacterNameChange.md
 docs/Corporation.md
 docs/CorporationMember.md
 docs/EsiLocation.md
+docs/EsiToken.md
 docs/EsiType.md
+docs/EveLogin.md
 docs/Group.md
 docs/GroupApplication.md
 docs/MonthlyAppRequests.md
@@ -52,7 +54,9 @@ neucore_api/model/character_name_change.py
 neucore_api/model/corporation.py
 neucore_api/model/corporation_member.py
 neucore_api/model/esi_location.py
+neucore_api/model/esi_token.py
 neucore_api/model/esi_type.py
+neucore_api/model/eve_login.py
 neucore_api/model/group.py
 neucore_api/model/group_application.py
 neucore_api/model/monthly_app_requests.py
@@ -89,7 +93,9 @@ test/test_character_name_change.py
 test/test_corporation.py
 test/test_corporation_member.py
 test/test_esi_location.py
+test/test_esi_token.py
 test/test_esi_type.py
+test/test_eve_login.py
 test/test_group.py
 test/test_group_application.py
 test/test_monthly_app_requests.py

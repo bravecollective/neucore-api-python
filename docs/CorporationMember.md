@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **missing_character_mail_sent_date** | **datetime, none_type** | Date and time of the last sent mail. | [optional] 
 **missing_character_mail_sent_result** | **str, none_type** | Result of the last sent mail (OK, Blocked, CSPA charge &gt; 0) | [optional] 
 **missing_character_mail_sent_number** | **int** | Number of mails sent, is reset when the character is added. | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
