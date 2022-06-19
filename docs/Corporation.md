@@ -5,7 +5,7 @@ EVE corporation.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** | EVE corporation ID. | 
+**id** | **int, none_type** | EVE corporation ID. | 
 **name** | **str, none_type** | EVE corporation name. | 
 **ticker** | **str, none_type** | Corporation ticker. | 
 **alliance** | [**Alliance**](Alliance.md) |  | [optional] 

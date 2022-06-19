@@ -28,10 +28,11 @@ Needs role: app-chars.
 ### Example
 
 * Bearer Authentication (BearerAuth):
+
 ```python
 import time
 import neucore_api
-from neucore_api.api import application___characters_api
+from neucore_api.api import application_characters_api
 from neucore_api.model.character import Character
 from pprint import pprint
 # Defining the host is optional and defaults to https://localhost/api
@@ -53,7 +54,7 @@ configuration = neucore_api.Configuration(
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = application___characters_api.ApplicationCharactersApi(api_client)
+    api_instance = application_characters_api.ApplicationCharactersApi(api_client)
     request_body = [
         1,
     ] # [int] | Array with EVE character IDs.
@@ -89,6 +90,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of characters (does not include the corporation property). |  -  |
@@ -107,10 +109,11 @@ Needs role: app-chars.
 ### Example
 
 * Bearer Authentication (BearerAuth):
+
 ```python
 import time
 import neucore_api
-from neucore_api.api import application___characters_api
+from neucore_api.api import application_characters_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://localhost/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -131,7 +134,7 @@ configuration = neucore_api.Configuration(
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = application___characters_api.ApplicationCharactersApi(api_client)
+    api_instance = application_characters_api.ApplicationCharactersApi(api_client)
     request_body = [
         1,
     ] # [int] | EVE character IDs array.
@@ -167,6 +170,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **400** | Invalid body. |  -  |
@@ -185,10 +189,11 @@ Needs role: app-chars.
 ### Example
 
 * Bearer Authentication (BearerAuth):
+
 ```python
 import time
 import neucore_api
-from neucore_api.api import application___characters_api
+from neucore_api.api import application_characters_api
 from neucore_api.model.character import Character
 from pprint import pprint
 # Defining the host is optional and defaults to https://localhost/api
@@ -210,7 +215,7 @@ configuration = neucore_api.Configuration(
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = application___characters_api.ApplicationCharactersApi(api_client)
+    api_instance = application_characters_api.ApplicationCharactersApi(api_client)
     character_id = 1 # int | EVE character ID.
 
     # example passing only required values which don't have defaults set
@@ -244,6 +249,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | All characters from the player account. |  -  |
@@ -262,10 +268,11 @@ Needs role: app-chars.
 ### Example
 
 * Bearer Authentication (BearerAuth):
+
 ```python
 import time
 import neucore_api
-from neucore_api.api import application___characters_api
+from neucore_api.api import application_characters_api
 from neucore_api.model.character import Character
 from pprint import pprint
 # Defining the host is optional and defaults to https://localhost/api
@@ -287,7 +294,7 @@ configuration = neucore_api.Configuration(
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = application___characters_api.ApplicationCharactersApi(api_client)
+    api_instance = application_characters_api.ApplicationCharactersApi(api_client)
     corporation_id = 1 # int | EVE corporation ID.
 
     # example passing only required values which don't have defaults set
@@ -321,6 +328,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of characters (does not include the corporation property). |  -  |
@@ -338,10 +346,11 @@ Needs role: app-chars.
 ### Example
 
 * Bearer Authentication (BearerAuth):
+
 ```python
 import time
 import neucore_api
-from neucore_api.api import application___characters_api
+from neucore_api.api import application_characters_api
 from neucore_api.model.player import Player
 from pprint import pprint
 # Defining the host is optional and defaults to https://localhost/api
@@ -363,7 +372,7 @@ configuration = neucore_api.Configuration(
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = application___characters_api.ApplicationCharactersApi(api_client)
+    api_instance = application_characters_api.ApplicationCharactersApi(api_client)
     corporation_id = 1 # int | EVE corporation ID.
 
     # example passing only required values which don't have defaults set
@@ -397,6 +406,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of players, only id and name properties are returned. |  -  |
@@ -414,10 +424,11 @@ Needs role: app-chars.
 ### Example
 
 * Bearer Authentication (BearerAuth):
+
 ```python
 import time
 import neucore_api
-from neucore_api.api import application___characters_api
+from neucore_api.api import application_characters_api
 from neucore_api.model.removed_character import RemovedCharacter
 from pprint import pprint
 # Defining the host is optional and defaults to https://localhost/api
@@ -439,7 +450,7 @@ configuration = neucore_api.Configuration(
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = application___characters_api.ApplicationCharactersApi(api_client)
+    api_instance = application_characters_api.ApplicationCharactersApi(api_client)
     character_id = 1 # int | EVE character ID.
 
     # example passing only required values which don't have defaults set
@@ -473,6 +484,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | All incoming characters from the player account. |  -  |
@@ -491,10 +503,11 @@ Needs role: app-chars.<br>It is possible that an account has no main character.
 ### Example
 
 * Bearer Authentication (BearerAuth):
+
 ```python
 import time
 import neucore_api
-from neucore_api.api import application___characters_api
+from neucore_api.api import application_characters_api
 from neucore_api.model.character import Character
 from pprint import pprint
 # Defining the host is optional and defaults to https://localhost/api
@@ -516,7 +529,7 @@ configuration = neucore_api.Configuration(
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = application___characters_api.ApplicationCharactersApi(api_client)
+    api_instance = application_characters_api.ApplicationCharactersApi(api_client)
     cid = 1 # int | EVE character ID.
 
     # example passing only required values which don't have defaults set
@@ -550,6 +563,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The main character |  -  |
@@ -569,10 +583,11 @@ Needs role: app-chars.<br>It is possible that an account has no main character.
 ### Example
 
 * Bearer Authentication (BearerAuth):
+
 ```python
 import time
 import neucore_api
-from neucore_api.api import application___characters_api
+from neucore_api.api import application_characters_api
 from neucore_api.model.character import Character
 from pprint import pprint
 # Defining the host is optional and defaults to https://localhost/api
@@ -594,7 +609,7 @@ configuration = neucore_api.Configuration(
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = application___characters_api.ApplicationCharactersApi(api_client)
+    api_instance = application_characters_api.ApplicationCharactersApi(api_client)
     cid = 1 # int | EVE character ID.
 
     # example passing only required values which don't have defaults set
@@ -628,6 +643,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The main character |  -  |
@@ -647,10 +663,11 @@ Needs role: app-chars.
 ### Example
 
 * Bearer Authentication (BearerAuth):
+
 ```python
 import time
 import neucore_api
-from neucore_api.api import application___characters_api
+from neucore_api.api import application_characters_api
 from neucore_api.model.character import Character
 from pprint import pprint
 # Defining the host is optional and defaults to https://localhost/api
@@ -672,7 +689,7 @@ configuration = neucore_api.Configuration(
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = application___characters_api.ApplicationCharactersApi(api_client)
+    api_instance = application_characters_api.ApplicationCharactersApi(api_client)
     player_id = 1 # int | Player ID.
 
     # example passing only required values which don't have defaults set
@@ -706,6 +723,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | All characters from the player account. |  -  |
@@ -724,10 +742,11 @@ Needs role: app-chars.
 ### Example
 
 * Bearer Authentication (BearerAuth):
+
 ```python
 import time
 import neucore_api
-from neucore_api.api import application___characters_api
+from neucore_api.api import application_characters_api
 from neucore_api.model.player import Player
 from pprint import pprint
 # Defining the host is optional and defaults to https://localhost/api
@@ -749,7 +768,7 @@ configuration = neucore_api.Configuration(
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = application___characters_api.ApplicationCharactersApi(api_client)
+    api_instance = application_characters_api.ApplicationCharactersApi(api_client)
     character_id = 1 # int | EVE character ID.
 
     # example passing only required values which don't have defaults set
@@ -783,6 +802,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The player, only id and name properties are returned. |  -  |
@@ -801,10 +821,11 @@ Needs role: app-chars.
 ### Example
 
 * Bearer Authentication (BearerAuth):
+
 ```python
 import time
 import neucore_api
-from neucore_api.api import application___characters_api
+from neucore_api.api import application_characters_api
 from neucore_api.model.player import Player
 from pprint import pprint
 # Defining the host is optional and defaults to https://localhost/api
@@ -826,7 +847,7 @@ configuration = neucore_api.Configuration(
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = application___characters_api.ApplicationCharactersApi(api_client)
+    api_instance = application_characters_api.ApplicationCharactersApi(api_client)
     character_id = 1 # int | EVE character ID.
 
     # example passing only required values which don't have defaults set
@@ -860,6 +881,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The player, only id, name and characters properties are returned. |  -  |
@@ -878,10 +900,11 @@ Needs role: app-chars.
 ### Example
 
 * Bearer Authentication (BearerAuth):
+
 ```python
 import time
 import neucore_api
-from neucore_api.api import application___characters_api
+from neucore_api.api import application_characters_api
 from neucore_api.model.removed_character import RemovedCharacter
 from pprint import pprint
 # Defining the host is optional and defaults to https://localhost/api
@@ -903,7 +926,7 @@ configuration = neucore_api.Configuration(
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = application___characters_api.ApplicationCharactersApi(api_client)
+    api_instance = application_characters_api.ApplicationCharactersApi(api_client)
     character_id = 1 # int | EVE character ID.
 
     # example passing only required values which don't have defaults set
@@ -937,6 +960,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | All removed characters from the player account. |  -  |

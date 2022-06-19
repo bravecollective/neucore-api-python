@@ -4,10 +4,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**character_id** | **int** | EVE character ID. | 
-**character_name** | **str** | EVE character name. | 
-**removed_date** | **datetime** | Date of removal. | 
-**reason** | **str** | How it was removed (deleted or moved to another account). | 
+**character_id** | **int, none_type** | EVE character ID. | 
+**character_name** | **str, none_type** | EVE character name. | 
+**removed_date** | **datetime, none_type** | Date of removal. | 
+**reason** | **str, none_type** | How it was removed (deleted or moved to another account). | 
 **new_player_id** | **int** |  | [optional] 
 **new_player_name** | **str** |  | [optional] 
 **player** | [**Player**](Player.md) |  | [optional] 

@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** | App ID | 
-**name** | **str** | App name | 
+**id** | **int, none_type** | App ID | 
+**name** | **str, none_type** | App name | 
 **roles** | [**[Role]**](Role.md) | Roles for authorization. | [optional] 
 **groups** | [**[Group]**](Group.md) | Groups the app can see. | [optional] 
 **eve_logins** | [**[EveLogin]**](EveLogin.md) |  | [optional] 

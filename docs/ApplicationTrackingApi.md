@@ -17,10 +17,11 @@ Needs role: app-tracking
 ### Example
 
 * Bearer Authentication (BearerAuth):
+
 ```python
 import time
 import neucore_api
-from neucore_api.api import application___tracking_api
+from neucore_api.api import application_tracking_api
 from neucore_api.model.corporation_member import CorporationMember
 from pprint import pprint
 # Defining the host is optional and defaults to https://localhost/api
@@ -42,7 +43,7 @@ configuration = neucore_api.Configuration(
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = application___tracking_api.ApplicationTrackingApi(api_client)
+    api_instance = application_tracking_api.ApplicationTrackingApi(api_client)
     id = 1 # int | EVE corporation ID.
     inactive = 1 # int | Limit to members who have been inactive for x days or longer. (optional)
     active = 1 # int | Limit to members who were active in the last x days. (optional)
@@ -91,6 +92,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Members ordered by logonDate descending (character and player properties excluded). |  -  |

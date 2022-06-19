@@ -27,10 +27,11 @@ Needs role: app-groups.<br>      *                  Returns only groups that hav
 ### Example
 
 * Bearer Authentication (BearerAuth):
+
 ```python
 import time
 import neucore_api
-from neucore_api.api import application___groups_api
+from neucore_api.api import application_groups_api
 from neucore_api.model.alliance import Alliance
 from pprint import pprint
 # Defining the host is optional and defaults to https://localhost/api
@@ -52,7 +53,7 @@ configuration = neucore_api.Configuration(
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = application___groups_api.ApplicationGroupsApi(api_client)
+    api_instance = application_groups_api.ApplicationGroupsApi(api_client)
     request_body = [
         1,
     ] # [int] | EVE alliance IDs array.
@@ -88,6 +89,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of alliances with groups. |  -  |
@@ -106,10 +108,11 @@ Needs role: app-groups.<br>Returns only groups that have been added to the app a
 ### Example
 
 * Bearer Authentication (BearerAuth):
+
 ```python
 import time
 import neucore_api
-from neucore_api.api import application___groups_api
+from neucore_api.api import application_groups_api
 from neucore_api.model.group import Group
 from pprint import pprint
 # Defining the host is optional and defaults to https://localhost/api
@@ -131,7 +134,7 @@ configuration = neucore_api.Configuration(
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = application___groups_api.ApplicationGroupsApi(api_client)
+    api_instance = application_groups_api.ApplicationGroupsApi(api_client)
     aid = 1 # int | EVE alliance ID.
 
     # example passing only required values which don't have defaults set
@@ -165,6 +168,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of groups. |  -  |
@@ -183,10 +187,11 @@ Needs role: app-groups.<br>Returns only groups that have been added to the app a
 ### Example
 
 * Bearer Authentication (BearerAuth):
+
 ```python
 import time
 import neucore_api
-from neucore_api.api import application___groups_api
+from neucore_api.api import application_groups_api
 from neucore_api.model.group import Group
 from pprint import pprint
 # Defining the host is optional and defaults to https://localhost/api
@@ -208,7 +213,7 @@ configuration = neucore_api.Configuration(
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = application___groups_api.ApplicationGroupsApi(api_client)
+    api_instance = application_groups_api.ApplicationGroupsApi(api_client)
     aid = 1 # int | EVE alliance ID.
 
     # example passing only required values which don't have defaults set
@@ -242,6 +247,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of groups. |  -  |
@@ -260,10 +266,11 @@ Needs role: app-groups.<br>      *                  Returns only groups that hav
 ### Example
 
 * Bearer Authentication (BearerAuth):
+
 ```python
 import time
 import neucore_api
-from neucore_api.api import application___groups_api
+from neucore_api.api import application_groups_api
 from neucore_api.model.corporation import Corporation
 from pprint import pprint
 # Defining the host is optional and defaults to https://localhost/api
@@ -285,7 +292,7 @@ configuration = neucore_api.Configuration(
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = application___groups_api.ApplicationGroupsApi(api_client)
+    api_instance = application_groups_api.ApplicationGroupsApi(api_client)
     request_body = [
         1,
     ] # [int] | EVE corporation IDs array.
@@ -321,6 +328,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of corporations with groups but without alliance. |  -  |
@@ -339,10 +347,11 @@ Needs role: app-groups.<br>Returns only groups that have been added to the app a
 ### Example
 
 * Bearer Authentication (BearerAuth):
+
 ```python
 import time
 import neucore_api
-from neucore_api.api import application___groups_api
+from neucore_api.api import application_groups_api
 from neucore_api.model.group import Group
 from pprint import pprint
 # Defining the host is optional and defaults to https://localhost/api
@@ -364,7 +373,7 @@ configuration = neucore_api.Configuration(
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = application___groups_api.ApplicationGroupsApi(api_client)
+    api_instance = application_groups_api.ApplicationGroupsApi(api_client)
     cid = 1 # int | EVE corporation ID.
 
     # example passing only required values which don't have defaults set
@@ -398,6 +407,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of groups. |  -  |
@@ -416,10 +426,11 @@ Needs role: app-groups.<br>Returns only groups that have been added to the app a
 ### Example
 
 * Bearer Authentication (BearerAuth):
+
 ```python
 import time
 import neucore_api
-from neucore_api.api import application___groups_api
+from neucore_api.api import application_groups_api
 from neucore_api.model.group import Group
 from pprint import pprint
 # Defining the host is optional and defaults to https://localhost/api
@@ -441,7 +452,7 @@ configuration = neucore_api.Configuration(
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = application___groups_api.ApplicationGroupsApi(api_client)
+    api_instance = application_groups_api.ApplicationGroupsApi(api_client)
     cid = 1 # int | EVE corporation ID.
 
     # example passing only required values which don't have defaults set
@@ -475,6 +486,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of groups. |  -  |
@@ -493,10 +505,11 @@ Needs role: app-groups.
 ### Example
 
 * Bearer Authentication (BearerAuth):
+
 ```python
 import time
 import neucore_api
-from neucore_api.api import application___groups_api
+from neucore_api.api import application_groups_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://localhost/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -517,7 +530,7 @@ configuration = neucore_api.Configuration(
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = application___groups_api.ApplicationGroupsApi(api_client)
+    api_instance = application_groups_api.ApplicationGroupsApi(api_client)
     group_id = 1 # int | Group ID.
     corporation = 1 # int | Limit to characters that are a member of this corporation. (optional)
 
@@ -562,6 +575,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of character IDs. |  -  |
@@ -580,10 +594,11 @@ Needs role: app-groups.<br>      *                  Returns only groups that hav
 ### Example
 
 * Bearer Authentication (BearerAuth):
+
 ```python
 import time
 import neucore_api
-from neucore_api.api import application___groups_api
+from neucore_api.api import application_groups_api
 from neucore_api.model.character_groups import CharacterGroups
 from pprint import pprint
 # Defining the host is optional and defaults to https://localhost/api
@@ -605,7 +620,7 @@ configuration = neucore_api.Configuration(
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = application___groups_api.ApplicationGroupsApi(api_client)
+    api_instance = application_groups_api.ApplicationGroupsApi(api_client)
     request_body = [
         1,
     ] # [int] | EVE character IDs array.
@@ -641,6 +656,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of characters (id, name and corporation properties only) with groups. |  -  |
@@ -659,10 +675,11 @@ Needs role: app-groups.<br>Returns only groups that have been added to the app a
 ### Example
 
 * Bearer Authentication (BearerAuth):
+
 ```python
 import time
 import neucore_api
-from neucore_api.api import application___groups_api
+from neucore_api.api import application_groups_api
 from neucore_api.model.group import Group
 from pprint import pprint
 # Defining the host is optional and defaults to https://localhost/api
@@ -684,7 +701,7 @@ configuration = neucore_api.Configuration(
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = application___groups_api.ApplicationGroupsApi(api_client)
+    api_instance = application_groups_api.ApplicationGroupsApi(api_client)
     cid = 1 # int | EVE character ID.
 
     # example passing only required values which don't have defaults set
@@ -718,6 +735,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of groups. |  -  |
@@ -736,10 +754,11 @@ Needs role: app-groups.<br>Returns only groups that have been added to the app a
 ### Example
 
 * Bearer Authentication (BearerAuth):
+
 ```python
 import time
 import neucore_api
-from neucore_api.api import application___groups_api
+from neucore_api.api import application_groups_api
 from neucore_api.model.group import Group
 from pprint import pprint
 # Defining the host is optional and defaults to https://localhost/api
@@ -761,7 +780,7 @@ configuration = neucore_api.Configuration(
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = application___groups_api.ApplicationGroupsApi(api_client)
+    api_instance = application_groups_api.ApplicationGroupsApi(api_client)
     cid = 1 # int | EVE character ID.
 
     # example passing only required values which don't have defaults set
@@ -795,6 +814,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of groups. |  -  |
@@ -813,10 +833,11 @@ Needs role: app-groups.<br>      *                  Returns only groups that hav
 ### Example
 
 * Bearer Authentication (BearerAuth):
+
 ```python
 import time
 import neucore_api
-from neucore_api.api import application___groups_api
+from neucore_api.api import application_groups_api
 from neucore_api.model.group import Group
 from pprint import pprint
 # Defining the host is optional and defaults to https://localhost/api
@@ -838,7 +859,7 @@ configuration = neucore_api.Configuration(
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = application___groups_api.ApplicationGroupsApi(api_client)
+    api_instance = application_groups_api.ApplicationGroupsApi(api_client)
     character = 1 # int | EVE character ID.
     corporation = 1 # int | EVE corporation ID.
     alliance = 1 # int | EVE alliance ID. (optional)
@@ -885,6 +906,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of groups. |  -  |

@@ -1,14 +1,14 @@
 # Character
 
-An EVE character.
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** | EVE character ID. | 
+**id** | **int, none_type** | EVE character ID. | 
 **name** | **str** | EVE character name. | 
 **valid_token** | **bool, none_type** | Shows if character&#39;s default refresh token is valid or not.                         This is null if there is no refresh token (EVE SSOv1 only)                         or a valid token but without scopes (SSOv2). | [optional] 
-**valid_token_time** | **datetime, none_type** | Date and time when the valid token property was last changed. | [optional] 
+**valid_token_time** | **datetime, none_type** | Date and time when the valid token property of the default token was last changed. | [optional] 
+**token_last_checked** | **datetime, none_type** | Date and time when the default token was last checked. | [optional] 
 **main** | **bool** |  | [optional] 
 **esi_tokens** | [**[EsiToken]**](EsiToken.md) | ESI tokens of the character (API: not included by default). | [optional] 
 **created** | **datetime, none_type** |  | [optional] 

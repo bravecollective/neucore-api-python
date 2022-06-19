@@ -6,7 +6,7 @@
 # raise a `RecursionError`.
 # In order to avoid this, import only the API that you directly need like:
 #
-#   from .api.application_api import ApplicationApi
+#   from neucore_api.api.application_api import ApplicationApi
 #
 # or import this package, but before doing it, use:
 #
@@ -15,7 +15,7 @@
 
 # Import APIs into API package:
 from neucore_api.api.application_api import ApplicationApi
-from neucore_api.api.application___characters_api import ApplicationCharactersApi
-from neucore_api.api.application___esi_api import ApplicationESIApi
-from neucore_api.api.application___groups_api import ApplicationGroupsApi
-from neucore_api.api.application___tracking_api import ApplicationTrackingApi
+from neucore_api.api.application_characters_api import ApplicationCharactersApi
+from neucore_api.api.application_esi_api import ApplicationESIApi
+from neucore_api.api.application_groups_api import ApplicationGroupsApi
+from neucore_api.api.application_tracking_api import ApplicationTrackingApi

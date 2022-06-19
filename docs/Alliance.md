@@ -5,7 +5,7 @@ EVE Alliance.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** | EVE alliance ID. | 
+**id** | **int, none_type** | EVE alliance ID. | 
 **name** | **str, none_type** | EVE alliance name. | 
 **ticker** | **str, none_type** | Alliance ticker. | 
 **groups** | [**[Group]**](Group.md) | Groups for automatic assignment (API: not included by default). | [optional] 
