@@ -7,7 +7,9 @@ Name | Type | Description | Notes
 **id** | **int, none_type** |  | 
 **name** | **str** | A name for the player.  This is the EVE character name of the current main character or of the last main character if there is currently none. | 
 **service_accounts** | [**[ServiceAccount]**](ServiceAccount.md) | External service accounts (API: not included by default) | [optional] 
+**character_id** | **str** | ID of main character (API: not included by default) | [optional] 
 **corporation_name** | **str** | Corporation of main character (API: not included by default) | [optional] 
+**alliance_name** | **str** | Alliance of main character (API: not included by default) | [optional] 
 **status** | **str** | Player account status. | [optional] 
 **roles** | [**[Role]**](Role.md) | Roles for authorization. | [optional] 
 **characters** | [**[Character]**](Character.md) |  | [optional] 

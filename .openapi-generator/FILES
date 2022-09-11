@@ -16,10 +16,12 @@ docs/Corporation.md
 docs/CorporationMember.md
 docs/EsiLocation.md
 docs/EsiToken.md
+docs/EsiTokenData.md
 docs/EsiType.md
 docs/EveLogin.md
 docs/Group.md
 docs/GroupApplication.md
+docs/HourlyAppRequests.md
 docs/MonthlyAppRequests.md
 docs/Player.md
 docs/PlayerLoginStatistics.md
@@ -55,10 +57,12 @@ neucore_api/model/corporation.py
 neucore_api/model/corporation_member.py
 neucore_api/model/esi_location.py
 neucore_api/model/esi_token.py
+neucore_api/model/esi_token_data.py
 neucore_api/model/esi_type.py
 neucore_api/model/eve_login.py
 neucore_api/model/group.py
 neucore_api/model/group_application.py
+neucore_api/model/hourly_app_requests.py
 neucore_api/model/monthly_app_requests.py
 neucore_api/model/player.py
 neucore_api/model/player_login_statistics.py
