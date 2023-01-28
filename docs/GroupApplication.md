@@ -5,7 +5,7 @@ The player property contains only id and name.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | 
+**id** | **int, none_type** |  | 
 **player** | [**Player**](Player.md) |  | 
 **group** | [**Group**](Group.md) |  | 
 **created** | **datetime, none_type** |  | 

@@ -5,7 +5,7 @@ The player property contains only id and name, character does not contain corpor
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** | EVE Character ID. | 
+**id** | **int, none_type** | EVE Character ID. | 
 **name** | **str, none_type** | EVE Character name. | 
 **player** | [**Player**](Player.md) |  | [optional] 
 **location** | [**EsiLocation**](EsiLocation.md) |  | [optional] 

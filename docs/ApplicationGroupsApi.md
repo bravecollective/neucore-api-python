@@ -95,6 +95,7 @@ Name | Type | Description  | Notes
 **200** | List of alliances with groups. |  -  |
 **400** | Invalid body. |  -  |
 **403** | Not authorized. |  -  |
+**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -174,6 +175,7 @@ Name | Type | Description  | Notes
 **200** | List of groups. |  -  |
 **403** | Not authorized. |  -  |
 **404** | Alliance not found. (default reason phrase) |  -  |
+**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -253,6 +255,7 @@ Name | Type | Description  | Notes
 **200** | List of groups. |  -  |
 **403** | Not authorized. |  -  |
 **404** | Reason phrase: Alliance not found. |  -  |
+**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -334,6 +337,7 @@ Name | Type | Description  | Notes
 **200** | List of corporations with groups but without alliance. |  -  |
 **400** | Invalid body. |  -  |
 **403** | Not authorized. |  -  |
+**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -413,6 +417,7 @@ Name | Type | Description  | Notes
 **200** | List of groups. |  -  |
 **403** | Not authorized. |  -  |
 **404** | Corporation not found. (default reason phrase) |  -  |
+**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -492,6 +497,7 @@ Name | Type | Description  | Notes
 **200** | List of groups. |  -  |
 **403** | Not authorized. |  -  |
 **404** | Reason phrase: Corporation not found. |  -  |
+**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -581,6 +587,7 @@ Name | Type | Description  | Notes
 **200** | List of character IDs. |  -  |
 **403** | Not authorized. |  -  |
 **404** | Group was not found or app may not see it. |  -  |
+**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -662,6 +669,7 @@ Name | Type | Description  | Notes
 **200** | List of characters (id, name and corporation properties only) with groups. |  -  |
 **400** | Invalid body. |  -  |
 **403** | Not authorized. |  -  |
+**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -741,6 +749,7 @@ Name | Type | Description  | Notes
 **200** | List of groups. |  -  |
 **403** | Not authorized. |  -  |
 **404** | Character not found. (default reason phrase) |  -  |
+**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -820,6 +829,7 @@ Name | Type | Description  | Notes
 **200** | List of groups. |  -  |
 **403** | Not authorized. |  -  |
 **404** | Reason phrase: Character not found. |  -  |
+**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -911,6 +921,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | List of groups. |  -  |
 **403** | Not authorized. |  -  |
+**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

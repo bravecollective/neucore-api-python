@@ -96,6 +96,7 @@ Name | Type | Description  | Notes
 **200** | A list of characters (does not include the corporation property). |  -  |
 **400** | Invalid body. |  -  |
 **403** | Not authorized. |  -  |
+**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -176,6 +177,7 @@ Name | Type | Description  | Notes
 **400** | Invalid body. |  -  |
 **200** | All characters from the player account. |  -  |
 **403** | Not authorized. |  -  |
+**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -255,6 +257,7 @@ Name | Type | Description  | Notes
 **200** | All characters from the player account. |  -  |
 **403** | Not authorized. |  -  |
 **404** | Character not found. |  -  |
+**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -333,6 +336,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | List of characters (does not include the corporation property). |  -  |
 **403** | Not authorized. |  -  |
+**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -411,6 +415,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | List of players, only id and name properties are returned. |  -  |
 **403** | Not authorized. |  -  |
+**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -490,6 +495,7 @@ Name | Type | Description  | Notes
 **200** | All incoming characters from the player account. |  -  |
 **403** | Not authorized. |  -  |
 **404** | Character not found. |  -  |
+**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -570,6 +576,7 @@ Name | Type | Description  | Notes
 **204** | No main character found. |  -  |
 **403** | Not authorized. |  -  |
 **404** | Character not found. (default reason phrase) |  -  |
+**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -650,6 +657,7 @@ Name | Type | Description  | Notes
 **204** | No main character found. |  -  |
 **403** | Not authorized. |  -  |
 **404** | Reason phrase: Character not found. |  -  |
+**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -729,6 +737,7 @@ Name | Type | Description  | Notes
 **200** | All characters from the player account. |  -  |
 **403** | Not authorized. |  -  |
 **404** | Player not found. |  -  |
+**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -808,6 +817,7 @@ Name | Type | Description  | Notes
 **200** | The player, only id and name properties are returned. |  -  |
 **403** | Not authorized. |  -  |
 **404** | Character not found. |  -  |
+**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -887,6 +897,7 @@ Name | Type | Description  | Notes
 **200** | The player, only id, name and characters properties are returned. |  -  |
 **403** | Not authorized. |  -  |
 **404** | Character not found. |  -  |
+**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -966,6 +977,7 @@ Name | Type | Description  | Notes
 **200** | All removed characters from the player account. |  -  |
 **403** | Not authorized. |  -  |
 **404** | Character not found. |  -  |
+**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -27,12 +27,14 @@ from neucore_api.model.hourly_app_requests import HourlyAppRequests
 from neucore_api.model.monthly_app_requests import MonthlyAppRequests
 from neucore_api.model.player import Player
 from neucore_api.model.player_login_statistics import PlayerLoginStatistics
+from neucore_api.model.plugin import Plugin
+from neucore_api.model.plugin_configuration_database import PluginConfigurationDatabase
+from neucore_api.model.plugin_configuration_file import PluginConfigurationFile
+from neucore_api.model.plugin_configuration_url import PluginConfigurationURL
 from neucore_api.model.removed_character import RemovedCharacter
 from neucore_api.model.role import Role
-from neucore_api.model.service import Service
+from neucore_api.model.search_result import SearchResult
 from neucore_api.model.service_account import ServiceAccount
-from neucore_api.model.service_configuration import ServiceConfiguration
-from neucore_api.model.service_configuration_url import ServiceConfigurationURL
 from neucore_api.model.system_variable import SystemVariable
 from neucore_api.model.total_daily_app_requests import TotalDailyAppRequests
 from neucore_api.model.total_monthly_app_requests import TotalMonthlyAppRequests

@@ -5,7 +5,7 @@ All URIs are relative to *https://localhost/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**esi_eve_login_characters_v1**](ApplicationESIApi.md#esi_eve_login_characters_v1) | **GET** /app/v1/esi/eve-login/{name}/characters | Returns character IDs of characters that have an ESI token (including invalid) of an EVE login.
-[**esi_eve_login_token_data_v1**](ApplicationESIApi.md#esi_eve_login_token_data_v1) | **GET** /app/v1/esi/eve-login/{name}/token-data | Returns data of valid tokens for an EVE login.
+[**esi_eve_login_token_data_v1**](ApplicationESIApi.md#esi_eve_login_token_data_v1) | **GET** /app/v1/esi/eve-login/{name}/token-data | Returns data for all valid tokens (roles are also checked if applicable) for an EVE login.
 [**esi_post_v1**](ApplicationESIApi.md#esi_post_v1) | **POST** /app/v1/esi | See POST /app/v2/esi
 [**esi_post_v2**](ApplicationESIApi.md#esi_post_v2) | **POST** /app/v2/esi | Same as GET /app/v2/esi, but for POST requests.
 [**esi_v1**](ApplicationESIApi.md#esi_v1) | **GET** /app/v1/esi | See GET /app/v2/esi
@@ -87,13 +87,14 @@ Name | Type | Description  | Notes
 **200** |  |  -  |
 **403** | Forbidden |  -  |
 **404** | EVE login not found. |  -  |
+**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **esi_eve_login_token_data_v1**
 > [EsiTokenData] esi_eve_login_token_data_v1(name)
 
-Returns data of valid tokens for an EVE login.
+Returns data for all valid tokens (roles are also checked if applicable) for an EVE login.
 
 Needs role: app-esi.
 
@@ -131,7 +132,7 @@ with neucore_api.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Returns data of valid tokens for an EVE login.
+        # Returns data for all valid tokens (roles are also checked if applicable) for an EVE login.
         api_response = api_instance.esi_eve_login_token_data_v1(name)
         pprint(api_response)
     except neucore_api.ApiException as e:
@@ -166,6 +167,7 @@ Name | Type | Description  | Notes
 **200** |  |  -  |
 **403** | Forbidden |  -  |
 **404** | EVE login not found. |  -  |
+**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
