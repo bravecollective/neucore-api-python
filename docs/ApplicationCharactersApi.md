@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**player_characters_v1**](ApplicationCharactersApi.md#player_characters_v1) | **GET** /app/v1/player-chars/{playerId} | Returns all characters from the player account.
 [**player_v1**](ApplicationCharactersApi.md#player_v1) | **GET** /app/v1/player/{characterId} | Returns the player account to which the character ID belongs.
 [**player_with_characters_v1**](ApplicationCharactersApi.md#player_with_characters_v1) | **GET** /app/v1/player-with-characters/{characterId} | Returns the player account to which the character ID belongs with all characters.
+[**players_v1**](ApplicationCharactersApi.md#players_v1) | **POST** /app/v1/players | Returns player accounts identified by character IDs.
 [**removed_characters_v1**](ApplicationCharactersApi.md#removed_characters_v1) | **GET** /app/v1/removed-characters/{characterId} | Returns all characters that were removed from the player account to which the character ID                     belongs.
 
 
@@ -897,6 +898,88 @@ Name | Type | Description  | Notes
 **200** | The player, only id, name and characters properties are returned. |  -  |
 **403** | Not authorized. |  -  |
 **404** | Character not found. |  -  |
+**500** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **players_v1**
+> [Player] players_v1(request_body)
+
+Returns player accounts identified by character IDs.
+
+Needs role: app-chars.
+
+### Example
+
+* Bearer Authentication (BearerAuth):
+
+```python
+import time
+import neucore_api
+from neucore_api.api import application_characters_api
+from neucore_api.model.player import Player
+from pprint import pprint
+# Defining the host is optional and defaults to https://localhost/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neucore_api.Configuration(
+    host = "https://localhost/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = neucore_api.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
+# Enter a context with an instance of the API client
+with neucore_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = application_characters_api.ApplicationCharactersApi(api_client)
+    request_body = [
+        1,
+    ] # [int] | EVE character IDs array.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Returns player accounts identified by character IDs.
+        api_response = api_instance.players_v1(request_body)
+        pprint(api_response)
+    except neucore_api.ApiException as e:
+        print("Exception when calling ApplicationCharactersApi->players_v1: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request_body** | **[int]**| EVE character IDs array. |
+
+### Return type
+
+[**[Player]**](Player.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The players, only id and name properties are returned. |  -  |
+**400** | Invalid body. |  -  |
+**403** | Not authorized. |  -  |
 **500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
