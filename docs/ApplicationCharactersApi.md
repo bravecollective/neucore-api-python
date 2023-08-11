@@ -15,7 +15,7 @@ Method | HTTP request | Description
 [**player_characters_v1**](ApplicationCharactersApi.md#player_characters_v1) | **GET** /app/v1/player-chars/{playerId} | Returns all characters from the player account.
 [**player_v1**](ApplicationCharactersApi.md#player_v1) | **GET** /app/v1/player/{characterId} | Returns the player account to which the character ID belongs.
 [**player_with_characters_v1**](ApplicationCharactersApi.md#player_with_characters_v1) | **GET** /app/v1/player-with-characters/{characterId} | Returns the player account to which the character ID belongs with all characters.
-[**players_v1**](ApplicationCharactersApi.md#players_v1) | **POST** /app/v1/players | Returns player accounts identified by character IDs.
+[**players_v1**](ApplicationCharactersApi.md#players_v1) | **POST** /app/v1/players | Returns player accounts identified by character IDs. Can contain the same player several times.
 [**removed_characters_v1**](ApplicationCharactersApi.md#removed_characters_v1) | **GET** /app/v1/removed-characters/{characterId} | Returns all characters that were removed from the player account to which the character ID                     belongs.
 
 
@@ -903,9 +903,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **players_v1**
-> [Player] players_v1(request_body)
+> [PlayerWithCharcterId] players_v1(request_body)
 
-Returns player accounts identified by character IDs.
+Returns player accounts identified by character IDs. Can contain the same player several times.
 
 Needs role: app-chars.
 
@@ -917,7 +917,7 @@ Needs role: app-chars.
 import time
 import neucore_api
 from neucore_api.api import application_characters_api
-from neucore_api.model.player import Player
+from neucore_api.model.player_with_charcter_id import PlayerWithCharcterId
 from pprint import pprint
 # Defining the host is optional and defaults to https://localhost/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -945,7 +945,7 @@ with neucore_api.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Returns player accounts identified by character IDs.
+        # Returns player accounts identified by character IDs. Can contain the same player several times.
         api_response = api_instance.players_v1(request_body)
         pprint(api_response)
     except neucore_api.ApiException as e:
@@ -961,7 +961,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[Player]**](Player.md)
+[**[PlayerWithCharcterId]**](PlayerWithCharcterId.md)
 
 ### Authorization
 
@@ -977,7 +977,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | The players, only id and name properties are returned. |  -  |
+**200** | One entry for each character ID that was provided and found. |  -  |
 **400** | Invalid body. |  -  |
 **403** | Not authorized. |  -  |
 **500** |  |  -  |

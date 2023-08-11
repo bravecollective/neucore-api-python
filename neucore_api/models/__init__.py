@@ -27,6 +27,7 @@ from neucore_api.model.hourly_app_requests import HourlyAppRequests
 from neucore_api.model.monthly_app_requests import MonthlyAppRequests
 from neucore_api.model.player import Player
 from neucore_api.model.player_login_statistics import PlayerLoginStatistics
+from neucore_api.model.player_with_charcter_id import PlayerWithCharcterId
 from neucore_api.model.plugin import Plugin
 from neucore_api.model.plugin_configuration_database import PluginConfigurationDatabase
 from neucore_api.model.plugin_configuration_file import PluginConfigurationFile

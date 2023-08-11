@@ -25,6 +25,7 @@ docs/HourlyAppRequests.md
 docs/MonthlyAppRequests.md
 docs/Player.md
 docs/PlayerLoginStatistics.md
+docs/PlayerWithCharcterId.md
 docs/Plugin.md
 docs/PluginConfigurationDatabase.md
 docs/PluginConfigurationFile.md
@@ -68,6 +69,7 @@ neucore_api/model/hourly_app_requests.py
 neucore_api/model/monthly_app_requests.py
 neucore_api/model/player.py
 neucore_api/model/player_login_statistics.py
+neucore_api/model/player_with_charcter_id.py
 neucore_api/model/plugin.py
 neucore_api/model/plugin_configuration_database.py
 neucore_api/model/plugin_configuration_file.py
