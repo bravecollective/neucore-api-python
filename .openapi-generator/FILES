@@ -14,6 +14,7 @@ docs/CharacterGroups.md
 docs/CharacterNameChange.md
 docs/Corporation.md
 docs/CorporationMember.md
+docs/EsiAccessToken.md
 docs/EsiLocation.md
 docs/EsiToken.md
 docs/EsiTokenData.md
@@ -58,6 +59,7 @@ neucore_api/model/character_groups.py
 neucore_api/model/character_name_change.py
 neucore_api/model/corporation.py
 neucore_api/model/corporation_member.py
+neucore_api/model/esi_access_token.py
 neucore_api/model/esi_location.py
 neucore_api/model/esi_token.py
 neucore_api/model/esi_token_data.py

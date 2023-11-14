@@ -16,6 +16,7 @@ from neucore_api.model.character_groups import CharacterGroups
 from neucore_api.model.character_name_change import CharacterNameChange
 from neucore_api.model.corporation import Corporation
 from neucore_api.model.corporation_member import CorporationMember
+from neucore_api.model.esi_access_token import EsiAccessToken
 from neucore_api.model.esi_location import EsiLocation
 from neucore_api.model.esi_token import EsiToken
 from neucore_api.model.esi_token_data import EsiTokenData
