@@ -9,6 +9,9 @@ a new version may break backwards compatibility.
 
 **Notes**
 
+If you use the `esi_v2` or `esi_post_v2` method, you may need to use `ast.literal_eval(api_response)`
+instead of `json.loads()` to parse the result.
+ 
 **Breaking changes**
 
 - 3.0.0  
