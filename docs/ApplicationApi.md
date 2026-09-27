@@ -19,11 +19,11 @@ Needs role: app
 * Bearer Authentication (BearerAuth):
 
 ```python
-import time
 import neucore_api
-from neucore_api.api import application_api
-from neucore_api.model.app import App
+from neucore_api.models.app import App
+from neucore_api.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://localhost/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = neucore_api.Configuration(
@@ -37,25 +37,27 @@ configuration = neucore_api.Configuration(
 
 # Configure Bearer authorization: BearerAuth
 configuration = neucore_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
+    access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
 with neucore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = application_api.ApplicationApi(api_client)
+    api_instance = neucore_api.ApplicationApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
     try:
         # Show app information.
         api_response = api_instance.show_v1()
+        print("The response of ApplicationApi->show_v1:\n")
         pprint(api_response)
-    except neucore_api.ApiException as e:
+    except Exception as e:
         print("Exception when calling ApplicationApi->show_v1: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -70,7 +72,6 @@ This endpoint does not need any parameter.
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 

@@ -67,3 +67,5 @@ target/
 
 /.idea
 /test
+
+application-api-3.yml
