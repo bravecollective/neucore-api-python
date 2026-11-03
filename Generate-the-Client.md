@@ -9,6 +9,7 @@
 - Copy the OpenAPI definition file from a [release](https://github.com/tkhamez/neucore/releases) from
   `web/application-api-3.yml` to `application-api-3.yml`, or fetch it from a running application, e.g.:
   ```shell
+  test -f application-api-3.yml && rm application-api-3.yml
   wget https://account.bravecollective.com/application-api-3.yml
   ```
 
@@ -22,11 +23,6 @@
   java -jar openapi-generator-cli-$GENERATOR_VERSION.jar generate -i application-api-3.yml -g python -c openapi-config.json
   ```
 
-- Add the directories `neucore_api` and `docs`:
-  ```shell
-  git add neucore_api docs
-  ```
-
 - Revert changes in `.gitignore`:
   ```shell
   git checkout .gitignore
@@ -36,8 +32,12 @@
 
 - In `README.md`, undo all changes above `This Python package is automatically generated`.
 
+- Add changed files:
+  ```shell
+  git add neucore_api docs README.md Generate-the-Client.md
+  ```
+
 - Commit everything:
   ```shell
-  git add .
   git commit -a -m "Update client"
   ```

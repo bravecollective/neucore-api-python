@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **roles** | [**List[Role]**](Role.md) | Roles for authorisation. | [optional] 
 **groups** | [**List[Group]**](Group.md) | Groups the app can see. | [optional] 
 **eve_logins** | [**List[EveLogin]**](EveLogin.md) |  | [optional] 
+**corporations** | [**List[Corporation]**](Corporation.md) | Corporations for which app access should be restricted. | [optional] 
+**access_groups** | [**List[Group]**](Group.md) | Access groups of the app. | [optional] 
 
 ## Example
 
