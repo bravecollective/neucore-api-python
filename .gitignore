@@ -68,4 +68,5 @@ target/
 /.idea
 /test
 
-application-api-3.yml
+/application-api-3.yml
+/openapi-generator-cli-*.jar
